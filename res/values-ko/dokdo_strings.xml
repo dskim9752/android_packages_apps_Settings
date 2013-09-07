@@ -93,4 +93,13 @@
     <!-- Statusbar Second Clock -->
     <string name="clock_use_second">초 시계</string>
     <string name="clock_use_second_summary">시계에 초를 표시</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">색상 지정</string>
+    <string name="press_color_to_apply">색상을 눌러 적용</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">설정</string>
 </resources>
