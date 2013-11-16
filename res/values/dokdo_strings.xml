@@ -227,4 +227,8 @@
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Camera shutter sound</string>
     <string name="camera_sounds_summary">WARNING: Disabling the camera shutter sound is illegal in some areas!</string>
+
+    <!-- Display Screen-on and off Electron beam animations -->
+    <string name="screen_off_animation_title">Screen-off animation</string>
+    <string name="screen_off_animation_summary">Show the electron beam animation when the screen is turned off</string>
 </resources>
