@@ -488,6 +488,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             try {
                 Settings.System.putInt(getContentResolver(), SCREEN_OFF_ANIMATION, value);
                 updateScreenOffAnimationPreferenceDescription(value);
+>>>>>>> [2/2] ElectronBeam: Add an alternative screen-off animation
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen-off animation setting", e);
             }
