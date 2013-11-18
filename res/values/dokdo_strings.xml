@@ -230,7 +230,7 @@
 
     <!-- Display Screen-on and off Electron beam animations -->
     <string name="screen_off_animation_title">Screen-off animation</string>
-    <string name="screen_off_animation_summary">Show the electron beam animation when the screen is turned off</string>
+    <string name="screen_off_animation_summary">Show the animation when the screen is turned off</string>
 
     <!-- Screen off animation -->
     <string name="screen_off_animation">Screen-off animation</string>
