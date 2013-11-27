@@ -24,6 +24,9 @@
 
     <!-- Halo -->
     <string name="halo_behavior_title">Halo 행동</string>
+    <string name="halo_enabled_title">HALO 활성화</string>
+    <string name="halo_enabled_summaryOn">HALO가 활성화됨</string>
+    <string name="halo_enabled_summaryOff">HALO가 비활성화됨</string>
     <string name="halo_hide_title">알림 후 Halo 숨기기</string>
     <string name="halo_hide_summary">Halo가 알림을 보여준 후 자동으로 사라집니다.</string>
     <string name="halo_reversed_title">Halo 반전</string>
