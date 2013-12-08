@@ -44,6 +44,12 @@
 
     <!-- Dokdo Custom tiles -->
     <string name="internal_memory_tile">internal memory</string>
+    <string name="title_tile_music">Music</string>
+    <string name="pref_music_mode_title">Music modes</string>
+    <string name="music_tile_mode_none">None</string>
+    <string name="music_tile_mode_background">Album artwork</string>
+    <string name="music_tile_mode_tracktitle">Track title</string>
+    <string name="music_tile_mode_all">Album artwork &amp; Track title</string>
     <string name="tile_weather">Weather</string>
 
     <!-- Status Bar -->

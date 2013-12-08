@@ -42,6 +42,7 @@
     <!-- Dokdo Custom tiles -->
     <string name="internal_memory_tile">내장 메모리</string>
     <string name="title_tile_music">음악</string>
+    <string name="pref_music_mode_title">음악 타일</string>
     <string name="tile_weather">날씨</string>
 
     <!-- ListView animation -->
