@@ -50,6 +50,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String EXP_RING_MODE = "pref_ring_mode";
     private static final String EXP_NETWORK_MODE = "pref_network_mode";
     private static final String EXP_SCREENTIMEOUT_MODE = "pref_screentimeout_mode";
+    private static final String EXP_MUSIC_MODE = "pref_music_mode";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String GENERAL_SETTINGS = "pref_general_settings";
     private static final String STATIC_TILES = "static_tiles";
@@ -58,6 +59,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private MultiSelectListPreference mRingMode;
     private ListPreference mNetworkMode;
     private ListPreference mScreenTimeoutMode;
+    private ListPreference mMusicMode;
     private ListPreference mQuickPulldown;
     private PreferenceCategory mGeneralSettings;
     private PreferenceCategory mStaticTiles;
@@ -120,6 +122,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mScreenTimeoutMode = (ListPreference) prefSet.findPreference(EXP_SCREENTIMEOUT_MODE);
         mScreenTimeoutMode.setSummary(mScreenTimeoutMode.getEntry());
         mScreenTimeoutMode.setOnPreferenceChangeListener(this);
+
+        // Music mode
+        mMusicMode = (ListPreference) prefSet.findPreference(EXP_MUSIC_MODE);
+        mMusicMode.setSummary(mMusicMode.getEntry());
+        mMusicMode.setOnPreferenceChangeListener(this);
 
         // Remove unsupported options
         if (!QSUtils.deviceSupportsDockBattery(getActivity())) {
@@ -202,6 +209,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int index = mScreenTimeoutMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver, Settings.System.EXPANDED_SCREENTIMEOUT_MODE, value);
             mScreenTimeoutMode.setSummary(mScreenTimeoutMode.getEntries()[index]);
+            return true;
+        } else if (preference == mMusicMode) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mMusicMode.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.MUSIC_TILE_MODE, value);
+            mMusicMode.setSummary(mMusicMode.getEntries()[index]);
             return true;
         }
         return false;
