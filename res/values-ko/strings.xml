@@ -790,13 +790,13 @@
     <string name="device_info_settings" product="default" msgid="475872867864762157">"휴대전화 상태"</string>
     <string name="system_update_settings_list_item_title" msgid="3342887311059985961">"시스템 업데이트"</string>
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
-    <string name="firmware_version" msgid="4801135784886859972">"Android 버전"</string>
+    <string name="firmware_version" msgid="4801135784886859972">"안드로이드 버전"</string>
     <string name="model_number" msgid="3765737700545384794">"모델 번호"</string>
     <string name="fcc_equipment_id" msgid="149114368246356737">"장비 ID"</string>
     <string name="baseband_version" msgid="1848990160763524801">"기저대역 버전"</string>
     <string name="kernel_version" msgid="9192574954196167602">"커널 버전"</string>
     <string name="build_number" msgid="3075795840572241758">"빌드 번호"</string>
-    <string name="selinux_status" msgid="6212165375172061672">"SELinux 상태"</string>
+    <string name="selinux_status" msgid="6212165375172061672">"SE for Android 상태"</string>
     <string name="device_info_not_available" msgid="8062521887156825182">"표시할 수 없음"</string>
     <string name="device_status_activity_title" msgid="1411201799384697904">"상태"</string>
     <string name="device_status" msgid="607405385799807324">"상태"</string>
