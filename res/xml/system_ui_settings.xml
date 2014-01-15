@@ -90,6 +90,11 @@
         android:fragment="com.android.settings.dokdo.ListviewAnimation"
         android:title="@string/listview_category" />
 
+     <PreferenceScreen
+        android:key="lights_and_warnings"
+        android:fragment="com.android.settings.dokdo.LightsAndWarnings"
+        android:title="@string/lights_and_warnings_title" />
+
     </PreferenceCategory>
 
     <ListPreference
