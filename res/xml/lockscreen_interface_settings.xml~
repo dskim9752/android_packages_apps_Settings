@@ -77,6 +77,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+<<<<<<< HEAD
         android:key="lockscreen_background_category"
         android:title="@string/lockscreen_background">
 
@@ -91,7 +92,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+=======
         android:title="@string/lockscreen_blur_title"
         android:key="lockscreen_blur_category" >
 
@@ -101,4 +102,5 @@
         android:summary="@string/lockscreen_blur_summary" />
 
     </PreferenceCategory>
+>>>>>>> LockScreen Blur Effect (2/2)
 </PreferenceScreen>
