@@ -17,6 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Dokdo Settings -->
     <string name="dokdo_settings_title">Customize</string>
+    <string name="etc_category_title">Etc</string>
 
     <!-- ListView animation -->
     <string name="listview_category">ListView Animation</string>
