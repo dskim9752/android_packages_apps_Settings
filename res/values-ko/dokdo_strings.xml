@@ -64,4 +64,8 @@
     <string name="halo_msgbox_animation_summary">Halo에 오는 알림의 박스 애니메이션</string>
     <string name="halo_msgbox_animation_none">없음</string>
     <string name="halo_msgbox_animation_flip">뒤집기</string>
+
+    <!--Lockscreen blur-->
+    <string name="lockscreen_blur_title">블러 이펙트</string>
+    <string name="lockscreen_blur_summary">잠금화면 배경화면을 블러 처리하여 잠금화면 배경화면이 반투명하게 변경됩니다.</string>
 </resources>

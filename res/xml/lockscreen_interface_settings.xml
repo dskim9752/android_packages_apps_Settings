@@ -65,20 +65,21 @@
                 android:key="keyguard_enable_camera"
                 android:title="@string/lockscreen_enable_camera_title" />
 
-        <!-- Lock clock -->
-        <PreferenceScreen
-            android:key="lock_clock"
-            android:title="@string/lock_clock_title"
-            android:summary="@string/lock_clock_summary">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cyanogenmod.lockclock"
-                    android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-        </PreferenceScreen>
-
         <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="lockscreen_maximize_widgets"
             android:summary="@string/lockscreen_maximize_widgets_summary"
             android:title="@string/lockscreen_maximize_widgets_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/lockscreen_blur_title"
+        android:key="lockscreen_blur_category" >
+
+    <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
+        android:key="lockscreen_blur"
+        android:title="@string/lockscreen_blur_title"
+        android:summary="@string/lockscreen_blur_summary" />
 
     </PreferenceCategory>
 </PreferenceScreen>
