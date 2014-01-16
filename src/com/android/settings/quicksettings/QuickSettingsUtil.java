@@ -30,6 +30,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.cm.QSConstants.TILE_LTE;
 import static com.android.internal.util.cm.QSConstants.TILE_MOBILEDATA;
 import static com.android.internal.util.cm.QSConstants.TILE_MUSIC;
+import static com.android.internal.util.cm.QSConstants.TILE_INTERNALMEMORY;
 import static com.android.internal.util.cm.QSConstants.TILE_NETWORKADB;
 import static com.android.internal.util.cm.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.cm.QSConstants.TILE_NFC;
@@ -157,6 +158,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_MUSIC, R.string.title_tile_music,
                 "com.android.systemui:drawable/ic_qs_media_play"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_INTERNALMEMORY, R.string.internal_memory_tile,
+                "com.android.systemui:drawable/ic_qs_internalmemory"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {

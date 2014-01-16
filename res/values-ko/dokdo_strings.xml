@@ -18,6 +18,9 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Dokdo Settings -->
     <string name="dokdo_settings_title">커스터마이즈</string>
+
+    <!-- Dokdo Custom tiles -->
+    <string name="internal_memory_tile">내장 메모리</string>
     <string name="title_tile_music">음악</string>
 
     <!-- ListView animation -->
