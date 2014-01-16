@@ -19,6 +19,9 @@
     <string name="dokdo_settings_title">Customize</string>
     <string name="etc_category_title">Etc</string>
 
+    <!-- Dokdo Custom tiles -->
+    <string name="internal_memory_tile">internal memory</string>
+
     <!-- Status Bar -->
     <string name="status_bar_clock_style_title">Clock Settings</string>
     <string name="status_bar_icon_style_title">Status icon Settings</string>
