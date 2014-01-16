@@ -1885,6 +1885,10 @@
 
         <activity android:name=".cyanogenmod.LockscreenInterface" />
 
+        <!-- Dokdo -->
+        
+        <activity android:name=".dokdo.DPI_Settings" />
+
          <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
         <activity android:name="Settings$BlacklistSettingsActivity"
                 android:theme="@style/Theme.DialogWhenLarge"
