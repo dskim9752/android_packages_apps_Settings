@@ -34,12 +34,14 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String STATUS_BAR_BATTERY = "status_bar_battery";
     private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
+    private static final String CLOCK_USE_SECOND = "clock_use_second";
 
     private static final String STATUS_BAR_BATTERY_SHOW_PERCENT = "status_bar_battery_show_percent";
 
     private static final String STATUS_BAR_STYLE_HIDDEN = "4";
     private static final String STATUS_BAR_STYLE_TEXT = "6";
 
+    private CheckBoxPreference mClockUseSecond;
     private ListPreference mStatusBarBattery;
     private SystemSettingCheckBoxPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarCmSignal;
@@ -76,6 +78,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
 
+        mClockUseSecond = (CheckBoxPreference) prefSet.findPreference(CLOCK_USE_SECOND);
+        mClockUseSecond.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.CLOCK_USE_SECOND, 0) == 1));
+
         int signalStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_SIGNAL_TEXT, 0);
         mStatusBarCmSignal.setValue(String.valueOf(signalStyle));
         mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntry());
@@ -90,6 +96,17 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         }
 
         enableStatusBarBatteryDependents(mStatusBarBattery.getValue());
+    }
+
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        boolean value;
+        if (preference == mClockUseSecond) {
+            value = mClockUseSecond.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.CLOCK_USE_SECOND, value ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
