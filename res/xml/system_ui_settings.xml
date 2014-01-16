@@ -86,6 +86,13 @@
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:key="DPI"
+        android:title="@string/dpi_category" >
+        <intent android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.dokdo.DPI_Settings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
         android:key="listview"
         android:fragment="com.android.settings.dokdo.ListviewAnimation"
         android:title="@string/listview_category" />

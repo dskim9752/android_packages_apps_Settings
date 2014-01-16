@@ -72,4 +72,21 @@
     <!--Lockscreen blur-->
     <string name="lockscreen_blur_title">블러 이펙트</string>
     <string name="lockscreen_blur_summary">잠금화면 배경화면을 블러 처리하여 잠금화면 배경화면이 반투명하게 변경됩니다.</string>
+
+    <!-- DPI Tool -->
+    <string name="current_dpi">현재 적용된 밀도값</string>
+    <string name="dpi_category">디스플레이 밀도</string>
+    <string name="dpi_ldpi">현재 장치의 해상도에 적합한 DPI값은 0~120입니다.</string>
+    <string name="dpi_mdpi">현재 장치의 해상도에 적합한 DPI값은 120~160입니다.</string>
+    <string name="dpi_hdpi">현재 장치의 해상도에 적합한 DPI값은 160~240입니다.</string>
+    <string name="dpi_xhdpi">현재 장치의 해상도에 적합한 DPI값은 240~320입니다.</string>
+    <string name="dpi_xxhdpi">현재 장치의 해상도에 적합한 DPI값은 320~640입니다.</string>
+    <string name="dpi_msg1">현재 장치의 밀도값이</string>
+    <string name="dpi_msg2">에서</string>
+    <string name="dpi_msg3">로 변경이 성공적으로 완료 되었습니다.</string>
+    <string name="dpi_need_reboot">수정한 밀도값은 재부팅을 하셔야 적용 됩니다.</string>
+    <string name="dpi_null">값을 입력해주세요.</string>
+    <string name="dpi_reboot">자동 재부팅</string>
+    <string name="dpi_sucess">디스플레이 밀도 값이 적용 되었습니다. \n\n 재부팅후 사용해 주세요. \n\n 재부팅 하지 않고 값을 재 변경하여도 적용되지 않습니다.</string>
+    <string name="dpi_warning">*주의*\n\n\n아래에 적혀있는 해상도에 맞는 권장 DPI를 사용하지 않아 핸드폰에 생기는 문제는 책임지지 않습니다.\n\n값을 적고 확인을 눌러주세요 재부팅하셔야 적용됩니다.</string>
 </resources>
