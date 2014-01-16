@@ -19,6 +19,11 @@
     <string name="dokdo_settings_title">Customize</string>
     <string name="etc_category_title">Etc</string>
 
+    <!-- Status Bar -->
+    <string name="status_bar_clock_style_title">Clock Settings</string>
+    <string name="status_bar_icon_style_title">Status icon Settings</string>
+    <string name="status_bar_etc_title">Etc Settings</string>
+
     <!-- ListView animation -->
     <string name="listview_category">ListView Animation</string>
     <string name="listview_animation_title">ListView Animation</string>
@@ -110,4 +115,11 @@
     <string name="low_battery_warning_policy_notif">Notification only</string>
     <string name="low_battery_warning_policy_sound">Sound only</string>
     <string name="low_battery_warning_policy_disabled">Disabled</string>
+
+    <!-- Network usage stats -->
+    <string name="status_bar_network_cat">Network traffic meter</string>
+    <string name="status_bar_network_header">Network traffic meter</string>
+    <string name="status_bar_network_title">Network traffic</string>
+    <string name="status_bar_show_network_stats_title">Show network speeds</string>
+    <string name="status_bar_network_stats_update_title">Update frequency</string>  
 </resources>
