@@ -89,4 +89,8 @@
     <string name="dpi_reboot">자동 재부팅</string>
     <string name="dpi_sucess">디스플레이 밀도 값이 적용 되었습니다. \n\n 재부팅후 사용해 주세요. \n\n 재부팅 하지 않고 값을 재 변경하여도 적용되지 않습니다.</string>
     <string name="dpi_warning">*주의*\n\n\n아래에 적혀있는 해상도에 맞는 권장 DPI를 사용하지 않아 핸드폰에 생기는 문제는 책임지지 않습니다.\n\n값을 적고 확인을 눌러주세요 재부팅하셔야 적용됩니다.</string>
+
+    <!-- Statusbar Second Clock -->
+    <string name="clock_use_second">초 시계</string>
+    <string name="clock_use_second_summary">시계에 초를 표시</string>
 </resources>
