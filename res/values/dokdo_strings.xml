@@ -152,4 +152,8 @@
     <!-- Statusbar Second Clock -->
     <string name="clock_use_second">Use second clock</string>
     <string name="clock_use_second_summary">Show second in clock</string>
+
+    <!-- Custom Overscroll Settings -->
+    <string name="ui_overscroll_title">Custom Overscroll Settings</string>
+    <string name="overscroll_glow_title">Overscroll Color</string>
 </resources>

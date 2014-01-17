@@ -72,6 +72,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/ui_overscroll_title">
+
+    <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+        android:key="overscroll_glow_color"
+        android:title="@string/overscroll_glow_title"
+        android:defaultValue="#ffffff" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="etc_category"
         android:title="@string/etc_category_title" >
