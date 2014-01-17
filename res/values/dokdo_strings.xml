@@ -21,6 +21,7 @@
 
     <!-- Dokdo Custom tiles -->
     <string name="internal_memory_tile">internal memory</string>
+    <string name="tile_weather">Weather</string>
 
     <!-- Status Bar -->
     <string name="status_bar_clock_style_title">Clock Settings</string>
