@@ -45,6 +45,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_SYNC;
 import static com.android.internal.util.cm.QSConstants.TILE_TORCH;
 import static com.android.internal.util.cm.QSConstants.TILE_USER;
 import static com.android.internal.util.cm.QSConstants.TILE_VOLUME;
+import static com.android.internal.util.cm.QSConstants.TILE_WEATHER;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFI;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFIAP;
 
@@ -161,6 +162,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_INTERNALMEMORY, R.string.internal_memory_tile,
                 "com.android.systemui:drawable/ic_qs_internalmemory"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_WEATHER, R.string.tile_weather,
+                "com.android.systemui:drawable/weather_preferences"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
