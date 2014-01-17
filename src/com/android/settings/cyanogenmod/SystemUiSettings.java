@@ -50,8 +50,12 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
     private CheckBoxPreference mNavigationBarLeftPref;
     private static final String OVERSCROLL_GLOW_COLOR = "overscroll_glow_color";
+    private static final String OVERSCROLL_PREF = "overscroll_effect";
+    private static final String OVERSCROLL_WEIGHT_PREF = "overscroll_weight";
 
     private ListPreference mExpandedDesktopPref;
+    private ListPreference mOverscrollPref;
+    private ListPreference mOverscrollWeightPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
     ColorPickerPreference mOverScrollGlowColor;
 
@@ -70,6 +74,18 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         int defaultColor = Color.rgb(255, 255, 255);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.OVERSCROLL_GLOW_COLOR, defaultColor);
         mOverScrollGlowColor.setNewPreviewColor(intColor);
+
+        mOverscrollPref = (ListPreference) findPreference(OVERSCROLL_PREF);
+        int overscrollEffect = Settings.System.getInt(getContentResolver(),
+                Settings.System.OVERSCROLL_EFFECT, 1);
+        mOverscrollPref.setValue(String.valueOf(overscrollEffect));
+        mOverscrollPref.setOnPreferenceChangeListener(this);
+
+        mOverscrollWeightPref = (ListPreference) findPreference(OVERSCROLL_WEIGHT_PREF);
+        int overscrollWeight = Settings.System.getInt(getContentResolver(), Settings.System.OVERSCROLL_WEIGHT, 5);
+        mOverscrollWeightPref.setValue(String.valueOf(overscrollWeight));
+        mOverscrollWeightPref.setOnPreferenceChangeListener(this);
+
 
         // Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
@@ -117,13 +133,13 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         }
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mExpandedDesktopPref) {
-            int expandedDesktopValue = Integer.valueOf((String) objValue);
+            int expandedDesktopValue = Integer.valueOf((String) newValue);
             updateExpandedDesktop(expandedDesktopValue);
             return true;
         } else if (preference == mExpandedDesktopNoNavbarPref) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             updateExpandedDesktop(value ? 2 : 0);
             return true;
         } else if (preference == mOverScrollGlowColor) {
@@ -133,6 +149,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.OVERSCROLL_GLOW_COLOR, intHex);
+            return true;
+        } else if (preference == mOverscrollPref) {
+            int overscrollEffect = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.OVERSCROLL_EFFECT, overscrollEffect);
+            return true;
+        } else if (preference == mOverscrollWeightPref) {
+            int overscrollWeight = Integer.valueOf((String)newValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.OVERSCROLL_WEIGHT, overscrollWeight);
             return true;
         }
         return false;
