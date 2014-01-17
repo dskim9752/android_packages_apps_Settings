@@ -18,6 +18,7 @@ package com.android.settings.cyanogenmod;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.preference.CheckBoxPreference;
@@ -30,6 +31,7 @@ import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference;
 import com.android.settings.Utils;
 
 public class SystemUiSettings extends SettingsPreferenceFragment  implements
@@ -40,9 +42,11 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_EXPANDED_DESKTOP_NO_NAVBAR = "expanded_desktop_no_navbar";
     private static final String CATEGORY_NAVBAR = "navigation_bar";
     private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";
+    private static final String OVERSCROLL_GLOW_COLOR = "overscroll_glow_color";
 
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
+    ColorPickerPreference mOverScrollGlowColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,13 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
         addPreferencesFromResource(R.xml.system_ui_settings);
         PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // Overscroll customize
+        mOverScrollGlowColor = (ColorPickerPreference) findPreference(OVERSCROLL_GLOW_COLOR);
+        mOverScrollGlowColor.setOnPreferenceChangeListener(this);
+        int defaultColor = Color.rgb(255, 255, 255);
+        int intColor = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.OVERSCROLL_GLOW_COLOR, defaultColor);
+        mOverScrollGlowColor.setNewPreviewColor(intColor);
 
         // Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
@@ -92,8 +103,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             boolean value = (Boolean) objValue;
             updateExpandedDesktop(value ? 2 : 0);
             return true;
+        } else if (preference == mOverScrollGlowColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.OVERSCROLL_GLOW_COLOR, intHex);
+            return true;
         }
-
         return false;
     }
 
