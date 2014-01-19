@@ -1,0 +1,15 @@
+Dokdo Project Description / Copyright
+
+Dokdo project is started in Korea August 14, 2013 as of ROM production project.
+
+[Credits]
+
+1.T﻿hinking Bridge
+2.CyanogenMod
+3.Paranoid Android
+﻿4.CarbonDev
+﻿5.SlimRoms
+﻿6.temasek
+﻿7.arter97
+
+addition other source developers

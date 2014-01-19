@@ -19,6 +19,29 @@
     <string name="dokdo_settings_title">Customize</string>
     <string name="etc_category_title">Etc</string>
 
+    <!-- Dokdo Info -->
+    <string name="dokdo_title">Dokdo ROM Information</string>
+    <string name="dokdo_title_summary">Bug Report, Source Code, and other information</string>
+    <string name="copyright_list_title">Copyright list</string>
+    <string name="dokdo_version">Dokdo ROM version</string>
+    <string name="dokdo_email_title">Bug report</string>
+    <string name="dokdo_email_summary">Send an email to Developer</string>
+    <string name="dokdo_facebook_title">Facebook page</string>
+    <string name="dokdo_facebook_summary">Visit Dokdo Project official Facebook page</string>
+    <string name="build_id">Build ID</string>
+    <string name="build_id_default">Unknown</string>
+    <string name="build_user">Build User</string>
+    <string name="build_user_default">Unknown</string>
+    <string name="main_title">Main</string>
+
+    <!-- Dokdo Platlogo -->
+    <string name="photo_name">We are Dokdo-Project</string>
+
+    <!-- Dokdo Bug report  -->
+    <string name="bugreport_warning_title">Notes</string>
+    <string name="bugreport_warning_message">1. If the device is not officially supported, do not use this feature.\n\n2. Depending on the language you are using, there may be limited.\n\n3. According to the Bug report policy, does not apply some requests.\n\n4. The answers grammar, may be incorrect.</string>
+    <string name="select_email_application">Select Email application</string>
+
     <!-- Dokdo Custom tiles -->
     <string name="internal_memory_tile">internal memory</string>
     <string name="tile_weather">Weather</string>

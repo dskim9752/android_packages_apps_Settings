@@ -1,0 +1,20 @@
+독도프로젝트 설명 및 저작권/도움주신분들
+
+독도프로젝트는 2013년 8월 14일자로 시작된 롬 제작 프로젝트입니다.
+
+[소스제작에 도움을 주신 분 및 팀]
+
+1.T﻿hinking Bridge
+2.CyanogenMod
+3.Paranoid Android
+﻿4.CarbonDev
+﻿5.SlimRoms
+﻿6.temasek
+﻿7.arter97(arter97)
+이 외 기타 소스 개발자들
+
+[배경화면부분]
+
+독도프로젝트 배경화면은 모두 저작권자의 허가없이 임의로 사용이 제한되어있으며, 이를 무단으로 수정하여 배포, 또는 허가없이 커뮤니티/SNS 등 타인에게 공유하여서는 안됩니다. 관련된 사항은 반드시 독도프로젝트 팀원(Sleepy[slg1119],진표[neighbors28])에게 문의해주세요.
+
+단, 독도배경화면은 제외됩니다. 모든 독도가 나온 배경화면 출처는 http://blog.moneta.co.kr/blog.log.view.screen?blogId=pbk603&logId=6450517 입니다.
