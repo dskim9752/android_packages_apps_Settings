@@ -42,6 +42,13 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
+        <!-- DokDo -->
+        <PreferenceScreen android:key="dokdo_info_tab"
+            android:title="@string/dokdo_title"
+            android:summary="@string/dokdo_title_summary"
+            android:fragment="com.android.settings.dokdo.Dokdo_Info" >
+        </PreferenceScreen>
+
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"

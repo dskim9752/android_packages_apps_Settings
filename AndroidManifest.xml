@@ -1889,6 +1889,14 @@
         
         <activity android:name=".dokdo.DPI_Settings" />
 
+        <activity android:name=".dokdo.Dokdo_Credits" />
+
+        <activity android:name=".dokdo.Dokdo_Platlogo"
+                  android:theme="@android:style/Theme.NoTitleBar" />
+
+        <activity android:name=".dokdo.Dokdo_Splash"
+                  android:theme="@android:style/Theme.NoTitleBar" />
+
          <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
         <activity android:name="Settings$BlacklistSettingsActivity"
                 android:theme="@style/Theme.DialogWhenLarge"
