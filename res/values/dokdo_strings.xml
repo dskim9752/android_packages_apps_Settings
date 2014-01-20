@@ -50,6 +50,7 @@
     <string name="status_bar_clock_style_title">Clock Settings</string>
     <string name="status_bar_icon_style_title">Status icon Settings</string>
     <string name="status_bar_etc_title">Etc Settings</string>
+    <string name="status_bar_am_pm_title">AM/PM style</string>
 
     <!-- ListView animation -->
     <string name="listview_category">ListView Animation</string>
