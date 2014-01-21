@@ -51,6 +51,7 @@
     <string name="status_bar_icon_style_title">Status icon Settings</string>
     <string name="status_bar_etc_title">Etc Settings</string>
     <string name="status_bar_am_pm_title">AM/PM style</string>
+    <string name="status_bar_center_clock_title">Center clock</string>
     <string name="enable_clock_weekday">Day of the week</string>
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
     <string name="dont_show">Don\'t show</string>

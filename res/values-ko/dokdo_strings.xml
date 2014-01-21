@@ -115,6 +115,9 @@
     <string name="clock_use_second">초 시계</string>
     <string name="clock_use_second_summary">시계에 초를 표시</string>
 
+    <!-- Center Clock -->
+    <string name="status_bar_center_clock_title">중앙 시계</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">색상 지정</string>
     <string name="press_color_to_apply">색상을 눌러 적용</string>
