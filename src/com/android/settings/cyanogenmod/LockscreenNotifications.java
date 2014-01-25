@@ -56,8 +56,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private CheckBoxPreference mPrivacyMode;
     private SeekBarPreference mOffsetTop;
     private AppMultiSelectListPreference mExcludedAppsPref;
-    
-    private Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
