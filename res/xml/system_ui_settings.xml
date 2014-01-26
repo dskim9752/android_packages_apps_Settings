@@ -102,6 +102,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+	android:key="progressbar"
+	android:title="@string/progressbar_title" >
+
+    <PreferenceScreen
+        android:key="progressbar_settings"
+        android:fragment="com.android.settings.cyanogenmod.ProgressBar"
+        android:title="@string/progressbar_title" >
+    </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="etc_category"
         android:title="@string/etc_category_title" >
 
