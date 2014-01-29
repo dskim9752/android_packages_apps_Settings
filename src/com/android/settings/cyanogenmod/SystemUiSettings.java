@@ -27,6 +27,7 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
 
@@ -52,13 +53,16 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String OVERSCROLL_GLOW_COLOR = "overscroll_glow_color";
     private static final String OVERSCROLL_PREF = "overscroll_effect";
     private static final String OVERSCROLL_WEIGHT_PREF = "overscroll_weight";
+    private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+    private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
 
     private ListPreference mExpandedDesktopPref;
     private ListPreference mOverscrollPref;
     private ListPreference mOverscrollWeightPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
-    ColorPickerPreference mOverScrollGlowColor;
-
+    private ColorPickerPreference mOverScrollGlowColor;
+    private SeekBarPreference mNavigation_bar_height;
+    private SeekBarPreference mNavigation_bar_width;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,8 +90,10 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         mOverscrollWeightPref.setValue(String.valueOf(overscrollWeight));
         mOverscrollWeightPref.setOnPreferenceChangeListener(this);
 
+	mNavigation_bar_height = (SeekBarPreference) findPreference(NAVIGATION_BAR_HEIGHT);
+        mNavigation_bar_width = (SeekBarPreference) findPreference(NAVIGATION_BAR_WIDTH);
 
-        // Expanded desktop
+	// Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
         mExpandedDesktopNoNavbarPref =
                 (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP_NO_NAVBAR);
@@ -127,12 +133,30 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 expandedCategory.removePreference(mExpandedDesktopPref);
                 // Hide navigation bar category
                 prefScreen.removePreference(findPreference(CATEGORY_NAVBAR));
+                prefScreen.removePreference(mNavigation_bar_height);
+                prefScreen.removePreference(mNavigation_bar_width);
+
             }
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");
         }
-    }
 
+	//NavBar control
+        float height = mContext.getResources().getDimension(com.android.internal.R.dimen.navigation_bar_height);
+        float width = mContext.getResources().getDimension(com.android.internal.R.dimen.navigation_bar_width);
+        DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
+        int heightdp = (int) (height / (metrics.densityDpi / 160f));
+        int widthdp = (int) ( width / (metrics.densityDpi / 160f));
+	int setvaluenavheight = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT, 48);
+        int setvaluenavwidth = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH, 42);
+
+        mNavigation_bar_height.setValue(setvaluenavheight);
+        mNavigation_bar_height.setOnPreferenceChangeListener(this);
+
+        mNavigation_bar_width.setValue(setvaluenavwidth);
+        mNavigation_bar_width.setOnPreferenceChangeListener(this);
+
+	}
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mExpandedDesktopPref) {
             int expandedDesktopValue = Integer.valueOf((String) newValue);
@@ -159,6 +183,14 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             int overscrollWeight = Integer.valueOf((String)newValue);
             Settings.System.putInt(getContentResolver(), Settings.System.OVERSCROLL_WEIGHT, overscrollWeight);
             return true;
+        } else if (preference == mNavigation_bar_height) {
+	    int NavHeight = ((Integer)newValue).intValue();
+	    Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT, NavHeight);
+	    return true;
+	} else if (preference == mNavigation_bar_width) {
+            int NavWidth = ((Integer)newValue).intValue();
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH, NavWidth);
+	    return true;
         }
         return false;
     }

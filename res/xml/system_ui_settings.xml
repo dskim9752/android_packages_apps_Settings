@@ -44,20 +44,42 @@
         android:title="@string/halo_settings_title" />
 
     </PreferenceCategory>
-
+    
     <PreferenceCategory
         android:key="navigation_bar"
         android:title="@string/navigation_bar_category" >
 
-        <PreferenceScreen
-            android:key="navigation_bar"
-            android:fragment="com.android.settings.cyanogenmod.NavBar"
-            android:title="@string/navigation_bar_title" />
+    <com.android.settings.cyanogenmod.SeekBarPreference
+        android:key="navigation_bar_height"
+        android:title="@string/navigation_bar_height" 
+        android:persistent="false"
+        android:summary="@string/progressbar_count_title"
+        android:max="48"
+        settings:min="0"
+        settings:unitsLeft=""
+        settings:unitsRight="dp"
+        android:defaultValue="48" />
 
-        <PreferenceScreen
-            android:key="navigation_ring"
-            android:fragment="com.android.settings.cyanogenmod.NavRing"
-            android:title="@string/navigation_ring_title" />
+    <com.android.settings.cyanogenmod.SeekBarPreference
+        android:key="navigation_bar_width"
+        android:title="@string/navigation_bar_width" 
+        android:persistent="false"
+        android:summary="@string/progressbar_count_title"
+        android:max="42"
+        settings:min="0"
+        settings:unitsLeft=""
+        settings:unitsRight="dp"
+        android:defaultValue="42" />
+
+    <PreferenceScreen
+        android:key="navigation_bar"
+        android:fragment="com.android.settings.cyanogenmod.NavBar"
+        android:title="@string/navigation_bar_title" />
+
+    <PreferenceScreen
+        android:key="navigation_ring"
+        android:fragment="com.android.settings.cyanogenmod.NavRing"
+        android:title="@string/navigation_ring_title" />
 
     </PreferenceCategory>
 
