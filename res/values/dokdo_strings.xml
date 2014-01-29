@@ -290,5 +290,6 @@
     <!-- Navbar Settings -->
     <string name="navigation_bar_height">NavBar Height</string>
     <string name="navigation_bar_width">NavBar Width</string>
-
+    <string name="navigation_bar_height_summary">Set NavBar Height Size: Reboot</string>
+    <string name="navigation_bar_width_summary">Set NavBar Width Size: Reboot</string>
 </resources>
