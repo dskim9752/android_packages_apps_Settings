@@ -286,4 +286,9 @@
     <string name="progressbar_color_3_title">Color3</string>
     <string name="progressbar_color_4_title">Color4</string>
     <string name="sample_progressbar_text">ProgressBar : Preview</string>
+
+    <!-- Navbar Settings -->
+    <string name="navigation_bar_height">NavBar Height</string>
+    <string name="navigation_bar_width">NavBar Width</string>
+
 </resources>
