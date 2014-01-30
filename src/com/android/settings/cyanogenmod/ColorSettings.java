@@ -36,9 +36,15 @@ public class ColorSettings extends SettingsPreferenceFragment implements
     private static PreferenceCategory PreviewLayout;
     private static final String STATUS_BAR_SHOW_NETWORK_STATS_COLOR = "status_bar_show_network_stats_color";
     private static final String STATUS_BAR_CLOCK_COLOR = "status_bar_clock_color";
+    private static final String STATUS_BAR_WIFI_COLOR = "status_bar_wifi_color";
+    private static final String STATUS_BAR_DATA_COLOR = "status_bar_data_color";
+    private static final String STATUS_BAR_AIRPLAIN_COLOR = "status_bar_airplain_color";
 
     private ColorPickerPreference mStatusBarNetStatsColor;
     private ColorPickerPreference mStatusBarClockColor;
+    private ColorPickerPreference mStatusBarWifiColor;
+    private ColorPickerPreference mStatusBarDataColor;
+    private ColorPickerPreference mStatusBarAirplainColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,8 +60,22 @@ public class ColorSettings extends SettingsPreferenceFragment implements
 	int Color = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_CLOCK_COLOR, -1);
  	mStatusBarClockColor.setNewPreviewColor(Color);
 	mStatusBarClockColor.setOnPreferenceChangeListener(this);
-    }
 
+	mStatusBarWifiColor = (ColorPickerPreference) findPreference(STATUS_BAR_WIFI_COLOR);
+        int Color2 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_WIFI_COLOR, -1);
+	mStatusBarWifiColor.setNewPreviewColor(Color2);
+	mStatusBarWifiColor.setOnPreferenceChangeListener(this);
+
+	mStatusBarDataColor = (ColorPickerPreference) findPreference(STATUS_BAR_DATA_COLOR);
+        int Color3 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_DATA_COLOR, -1);
+        mStatusBarDataColor.setNewPreviewColor(Color3);
+	mStatusBarDataColor.setOnPreferenceChangeListener(this);
+
+	mStatusBarAirplainColor = (ColorPickerPreference) findPreference(STATUS_BAR_AIRPLAIN_COLOR);
+        int Color4 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_AIRPLAIN_COLOR, -1);
+        mStatusBarAirplainColor.setNewPreviewColor(Color4);
+        mStatusBarAirplainColor.setOnPreferenceChangeListener(this);
+    }
     @Override
     public void onResume() {
         super.onResume();
@@ -78,6 +98,20 @@ public class ColorSettings extends SettingsPreferenceFragment implements
 		Settings.System.putInt(getContentResolver(),
 		Settings.System.STATUS_BAR_CLOCK_COLOR, color1);
              return true;
+	} else if ( preference == mStatusBarWifiColor) {
+		int color2 = ((Integer)newValue).intValue();
+		Settings.System.putInt(getContentResolver(),
+		Settings.System.STATUS_BAR_WIFI_COLOR, color2);
+	} else if ( preference == mStatusBarDataColor) {
+		int color3 = ((Integer)newValue).intValue();
+                Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_DATA_COLOR, color3);
+	    return true;
+	} else if ( preference == mStatusBarAirplainColor) {
+                int color4 = ((Integer)newValue).intValue();
+                Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_AIRPLAIN_COLOR, color4);
+	    return true;
 	}
         return false;
     }
