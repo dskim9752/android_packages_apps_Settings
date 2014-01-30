@@ -20,6 +20,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.ContentResolver;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -32,10 +33,10 @@ import android.provider.Settings.SettingNotFoundException;
 import android.text.format.DateFormat;
 import android.widget.EditText;
 
+import com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-
 import java.util.Date;
 
 public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -52,6 +53,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String STATUS_BAR_STYLE_HIDDEN = "4";
     private static final String STATUS_BAR_STYLE_TEXT = "6";
+    private static final String STATUS_BAR_CLOCK_COLOR = "status_bar_clock_color";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -65,6 +67,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private ColorPickerPreference mStatusBarClockColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -149,8 +152,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         }
 
         enableStatusBarBatteryDependents(mStatusBarBattery.getValue());
-    }
 
+        int defaultColor = Color.rgb(255, 255, 255);
+        mStatusBarClockColor = (ColorPickerPreference) findPreference(STATUS_BAR_CLOCK_COLOR);
+        int Color = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_CLOCK_COLOR, defaultColor);
+        mStatusBarClockColor.setNewPreviewColor(Color);
+        mStatusBarClockColor.setOnPreferenceChangeListener(this);
+	}
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
         if (preference == mClockUseSecond) {
@@ -252,6 +260,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                         Settings.System.STATUSBAR_CLOCK_DATE_FORMAT, (String) newValue);
                 }
             }
+            return true;
+        } else if ( preference == mStatusBarClockColor) {
+            int color = ((Integer)newValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CLOCK_COLOR, color);
             return true;
         }
         return false;

@@ -291,4 +291,7 @@
     <string name="navigation_bar_width_summary">Set NavBar Width Size: Reboot</string>
     <string name="navigation_bar_toggle_summary">NavBar Toggle: Reboot</string>
     <string name="navigation_bar_control">NavBar Control</string>
+
+    <!--StatusBar Color -->
+    <string name="status_bar_clock_color">StatusBar Clock Color</string>
 </resources>
