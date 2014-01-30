@@ -295,4 +295,5 @@
     <!--StatusBar Color -->
     <string name="status_bar_clock_color">StatusBar Clock Color</string>
     <string name="status_bar_show_network_stats_color_title">Traffic meter Color</string>
+    <string name="status_bar_color_setting">Color Settings</string>
 </resources>
