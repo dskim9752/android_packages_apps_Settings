@@ -39,12 +39,20 @@ public class ColorSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_WIFI_COLOR = "status_bar_wifi_color";
     private static final String STATUS_BAR_DATA_COLOR = "status_bar_data_color";
     private static final String STATUS_BAR_AIRPLAIN_COLOR = "status_bar_airplain_color";
+    private static final String STATUS_BAR_BATTERYMETER_FRAME_COLOR = "status_bar_batterymeter_frame_color";
+    private static final String STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR = "status_bar_batterymeter_circle_bolt_color";
+    private static final String STATUS_BAR_BATTERYMETER_CHARGE_COLOR = "status_bar_batterymeter_charge_color";
+    private static final String STATUS_BAR_BATTERYMETER_BOLT_COLOR = "status_bar_batterymeter_bolt_color";
 
     private ColorPickerPreference mStatusBarNetStatsColor;
     private ColorPickerPreference mStatusBarClockColor;
     private ColorPickerPreference mStatusBarWifiColor;
     private ColorPickerPreference mStatusBarDataColor;
     private ColorPickerPreference mStatusBarAirplainColor;
+    private ColorPickerPreference mStatusBarBatteryMeterFrameColor;
+    private ColorPickerPreference mStatusBarBatteryMeterCircleBoltColor;
+    private ColorPickerPreference mStatusBarBatteryMeterChargeColor;
+    private ColorPickerPreference mStatusBarBatteryMeterBoltColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +83,26 @@ public class ColorSettings extends SettingsPreferenceFragment implements
         int Color4 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_AIRPLAIN_COLOR, -1);
         mStatusBarAirplainColor.setNewPreviewColor(Color4);
         mStatusBarAirplainColor.setOnPreferenceChangeListener(this);
+
+        mStatusBarBatteryMeterFrameColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_FRAME_COLOR);
+        int Color5 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_FRAME_COLOR, 1728053247);
+        mStatusBarBatteryMeterFrameColor.setNewPreviewColor(Color5);
+	 mStatusBarBatteryMeterFrameColor.setOnPreferenceChangeListener(this);
+
+        mStatusBarBatteryMeterChargeColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_CHARGE_COLOR);
+        int Color6 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_CHARGE_COLOR, -1);
+        mStatusBarBatteryMeterChargeColor.setNewPreviewColor(Color6);
+        mStatusBarBatteryMeterChargeColor.setOnPreferenceChangeListener(this);
+
+        mStatusBarBatteryMeterBoltColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_BOLT_COLOR);
+        int Color7 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_BOLT_COLOR, -1308622848);
+        mStatusBarBatteryMeterBoltColor.setNewPreviewColor(Color7);
+	mStatusBarBatteryMeterBoltColor.setOnPreferenceChangeListener(this);
+
+	mStatusBarBatteryMeterCircleBoltColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR);
+        int Color8 = Settings.System.getInt(getActivity().getContentResolver(), STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR, -1);
+        mStatusBarBatteryMeterCircleBoltColor.setNewPreviewColor(Color8);
+        mStatusBarBatteryMeterCircleBoltColor.setOnPreferenceChangeListener(this);
     }
     @Override
     public void onResume() {
@@ -112,8 +140,28 @@ public class ColorSettings extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getContentResolver(),
                 Settings.System.STATUS_BAR_AIRPLAIN_COLOR, color4);
 	    return true;
+	} else if ( preference == mStatusBarBatteryMeterFrameColor) {
+		int color5 = ((Integer)newValue).intValue();
+		Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERYMETER_FRAME_COLOR, color5);
+	    return true;
+	} else if ( preference == mStatusBarBatteryMeterChargeColor) {
+		int color6 = ((Integer)newValue).intValue();
+                Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERYMETER_CHARGE_COLOR, color6);
+	    return true;
+	} else if ( preference == mStatusBarBatteryMeterBoltColor) {
+		int color7 = ((Integer)newValue).intValue();
+                Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERYMETER_BOLT_COLOR, color7);
+	    return true;
+	} else if ( preference == mStatusBarBatteryMeterCircleBoltColor) {
+		int color8 = ((Integer)newValue).intValue();
+		                Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR, color8);
+	    return true;
 	}
-        return false;
+	return false;
     }
 
 

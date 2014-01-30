@@ -299,4 +299,8 @@
     <string name="status_bar_show_network_stats_color_title">Traffic meter Color</string>
     <string name="status_bar_color_setting">Color Settings</string>
     <string name="status_bar_airplain_color">StatusBar Airplain Color</string>
+    <string name="batterymeter_frame_color">Circle Battery Frame Color</string>
+    <string name="batterymeter_circle_bolt_color">Circle Battery Bolt Color</string>
+    <string name="batterymeter_charge_color">Battery Charge Color</string>
+    <string name="batterymeter_bolt_color">Battery Bolt Color</string>
 </resources>
