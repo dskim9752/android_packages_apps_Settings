@@ -21,6 +21,21 @@
         android:key="lockscreen_general_category" >
 
     <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+        android:key="status_bar_wifi_color"
+        android:title="@string/status_bar_wifi_color"
+        android:defaultValue="#ffffff" />
+
+    <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+        android:key="status_bar_data_color"
+        android:title="@string/status_bar_data_color"
+        android:defaultValue="#ffffff" />
+
+    <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+        android:key="status_bar_airplain_color"
+        android:title="@string/status_bar_airplain_color"
+        android:defaultValue="#ffffff" />
+
+    <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
         android:key="status_bar_clock_color"
         android:title="@string/status_bar_clock_color"
         android:defaultValue="#ffffff" />
@@ -29,6 +44,7 @@
             android:key="status_bar_show_network_stats_color"
             android:title="@string/status_bar_show_network_stats_color_title"
             android:defaultValue="#ffffff" />
+
 
     </PreferenceCategory>
 </PreferenceScreen>
