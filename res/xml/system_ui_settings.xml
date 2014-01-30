@@ -63,6 +63,7 @@
         settings:min="0"
         settings:unitsLeft=""
         settings:unitsRight="dp"
+        android:dependency="navigation_bar_toggle"
         android:defaultValue="48" />
 
     <com.android.settings.cyanogenmod.SeekBarPreference
@@ -74,6 +75,7 @@
         settings:min="0"
         settings:unitsLeft=""
         settings:unitsRight="dp"
+        android:dependency="navigation_bar_toggle"
         android:defaultValue="42" />
     </PreferenceCategory>
 
