@@ -127,4 +127,86 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">설정</string>
+
+    <!-- Custom Overscroll Settings -->
+    <string name="ui_overscroll_title">커스텀 오버스크롤 설정</string>
+    <string name="overscroll_glow_title">오버스크롤 색깔</string>
+    <string name="edge_effect_title">글로우 효과</string>
+    <string name="bounce_effect_title">팅기는 효과</string>
+    <string name="none_effect_title">없음</string>
+    <string name="extra_heavy_title">엄청 무겁게</string>
+    <string name="heavy_title">무겁게</string>
+    <string name="medium_title">중간</string>
+    <string name="light_title">가볍게</string>
+    <string name="extra_light_title">엄청 가볍게</string>
+    <string name="overscroll_title">오버스크롤 효과</string>
+    <string name="overscroll_summary">Choose how scrollable objects look when they overshoot</string>
+    <string name="overscroll_weight_title">오버스크롤 무게</string>
+    <string name="overscroll_weight_summary">Select the weight of the scrollable objects</string>
+
+    <!-- Sound settings screen, setting check box label -->
+    <string name="camera_sounds_title">카메라 촬영 소리</string>
+    <string name="camera_sounds_summary">경고: 촬영 소리를 끄는 것은 몇몇 지역에서는 불법입니다!</string>
+
+    <!-- Display Screen-on and off Electron beam animations -->
+    <string name="screen_off_animation_title">화면꺼짐 애니메이션</string>
+    <string name="screen_off_animation_summary">화면이 꺼질때 나오는 애니메이션을 선택합니다.</string>
+
+    <!-- Screen off animation -->
+    <string name="screen_off_animation">화면꺼짐 애니메이션</string>
+
+    <!-- Lockscreen Notifications -->
+    <!-- Categories --> 
+    <string name="general">일반</string>
+    <string name="layout">레이아웃</string>
+    <string name="privacy">사생활</string>
+
+    <string name="lockscreen_notifications">잠금 화면 알림</string>
+    <string name="lockscreen_notifications_summary">잠금 화면에 알림을 표시합니다.</string>
+    <string name="pocket_mode">Pocket mode</string>
+    <string name="pocket_mode_summary">Turn screen on and show all notifications when device is pulled out of pocket. Turn screen off when device gets back into pocket.</string>
+    <string name="show_always">Show always</string>
+    <string name="show_always_summary">Always turn screen on when pulled out of pocket, even when there are no notifications pending</string>
+    <string name="hide_low_priority">Hide low priority</string>
+    <string name="hide_low_priority_summary">Hide low priority notifications such as google now weather notifications</string>
+    <string name="hide_non_clearable">Hide non clearable</string>
+    <string name="hide_non_clearable_summary">Hide all non clearable notifications</string>
+    <string name="dismiss_all">Allow dismissing all notifications</string>
+    <string name="dismiss_all_summary">Allow dismissing even non clearable notifications. Of course, they\'re just hidden from lockscreen and not from the notification panel.</string>
+    <string name="expanded_view">Expanded notification view</string>
+    <string name="expanded_view_summary">Add possibility to toggle between normal and expanded view by longpress. The expanded view sometimes shows more private information so you might want to disable it.</string>
+    <string name="force_expanded_view">Force expanded view</string>
+    <string name="force_expanded_view_summary">Show notifications expanded by default. You still will be able to toggle between expanded and normal view.</string>
+    <string name="wake_on_notification">Wake on notification</string>
+    <string name="wake_on_notification_summary">Wake device when a new notification is received</string>
+    <string name="notifications_height">Notification count</string>
+    <string name="notifications_height_summary">Number of notifications displayed at once</string>
+    <string name="offset_top">Offset to the top of the screen:</string>
+    <string name="privacy_mode">Privacy Mode</string>
+    <string name="privacy_mode_summary">Disables notifications from beeing shown and dismissed. This way, you just see the icons of your notifications.</string>
+    <string name="excluded_apps_title">Excluded applications</string>
+    <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
+
+    <!-- Smooth ProgressBar -->
+    <string name="progressbar_title">커스텀 프로그레스 바</string>
+    <string name="progressbar_mirror_title">거울 모드</string>
+    <string name="progressbar_reverse_title">Reversed</string>
+    <string name="progressbar_speed_title">속도</string>
+    <string name="progressbar_width_title">Stroke Width</string>
+    <string name="progressbar_length_title">Separator length</string>
+    <string name="progressbar_count_title">Sections Count</string>
+    <string name="progressbar_color_1_title">Color1</string>
+    <string name="progressbar_color_2_title">Color2</string>
+    <string name="progressbar_color_3_title">Color3</string>
+    <string name="progressbar_color_4_title">Color4</string>
+    <string name="sample_progressbar_text">프로그레스 바 : 미리보기</string>
+
+    <!-- Navbar Settings -->
+    <string name="navigation_bar_height">네비게이션 바 높이</string>
+    <string name="navigation_bar_width">네비게이션 바 폭</string>
+    <string name="navigation_bar_toggle">네비게이션 바 토글</string>
+    <string name="navigation_bar_height_summary">Set NavBar Height Size: Reboot</string>
+    <string name="navigation_bar_width_summary">Set NavBar Width Size: Reboot</string>
+    <string name="navigation_bar_toggle_summary">NavBar Toggle: Reboot</string>
+    <string name="navigation_bar_control">네비게이션 바 제어</string>
 </resources>
