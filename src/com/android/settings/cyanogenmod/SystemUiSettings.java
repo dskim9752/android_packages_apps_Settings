@@ -48,11 +48,13 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String OVERSCROLL_WEIGHT_PREF = "overscroll_weight";
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+    private static final String NAVIGATION_BAR_TOGGLE = "navigation_bar_toggle";
 
     private ListPreference mExpandedDesktopPref;
     private ListPreference mOverscrollPref;
     private ListPreference mOverscrollWeightPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
+    private CheckBoxPreference mNavigation_bar_toggle;
     private ColorPickerPreference mOverScrollGlowColor;
     private SeekBarPreference mNavigation_bar_height;
     private SeekBarPreference mNavigation_bar_width;
@@ -83,6 +85,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
 	mNavigation_bar_height = (SeekBarPreference) findPreference(NAVIGATION_BAR_HEIGHT);
         mNavigation_bar_width = (SeekBarPreference) findPreference(NAVIGATION_BAR_WIDTH);
+	mNavigation_bar_toggle = (CheckBoxPreference) findPreference(NAVIGATION_BAR_TOGGLE);
 
 	// Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
@@ -109,8 +112,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 prefScreen.removePreference(mExpandedDesktopPref);
                 // Hide navigation bar category
                 prefScreen.removePreference(findPreference(CATEGORY_NAVBAR));
-                prefScreen.removePreference(mNavigation_bar_height);
-                prefScreen.removePreference(mNavigation_bar_width);
 
             }
         } catch (RemoteException e) {
@@ -118,12 +119,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         }
 
 	//NavBar control
-        float height = mContext.getResources().getDimension(com.android.internal.R.dimen.navigation_bar_height);
-        float width = mContext.getResources().getDimension(com.android.internal.R.dimen.navigation_bar_width);
-        DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
-        int heightdp = (int) (height / (metrics.densityDpi / 160f));
-        int widthdp = (int) ( width / (metrics.densityDpi / 160f));
-	int setvaluenavheight = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT, 48);
+	int DefaultNavbarStatus = (mContext.getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar) ? 1:0);
+	int NavbarStatus = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_TOGGLE, DefaultNavbarStatus);
+	if ( NavbarStatus == 1 ) {
+		mNavigation_bar_toggle.setChecked(true);
+	} else {
+		mNavigation_bar_toggle.setChecked(false);
+	}
+	mNavigation_bar_toggle.setOnPreferenceChangeListener(this);
+        int setvaluenavheight = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT, 48);
         int setvaluenavwidth = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH, 42);
 
         mNavigation_bar_height.setValue(setvaluenavheight);
@@ -131,7 +135,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
         mNavigation_bar_width.setValue(setvaluenavwidth);
         mNavigation_bar_width.setOnPreferenceChangeListener(this);
-
 	}
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mExpandedDesktopPref) {
@@ -167,7 +170,12 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             int NavWidth = ((Integer)newValue).intValue();
             Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH, NavWidth);
 	    return true;
-        }
+        } else if (preference == mNavigation_bar_toggle) {
+	    boolean value = mNavigation_bar_toggle.isChecked();
+	    Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_TOGGLE, value ? 0:1);
+	    System.out.println(value ? 1:0);
+	    return true;
+	}
         return false;
     }
 

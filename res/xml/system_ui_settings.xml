@@ -46,8 +46,13 @@
     </PreferenceCategory>
     
     <PreferenceCategory
-        android:key="navigation_bar"
-        android:title="@string/navigation_bar_category" >
+	android:key="navigation_bar_control"
+	android:title="@string/navigation_bar_control" >
+
+    <CheckBoxPreference
+	android:key="navigation_bar_toggle"
+        android:title="@string/navigation_bar_toggle" 
+	android:summary="@string/navigation_bar_toggle_summary" />
 
     <com.android.settings.cyanogenmod.SeekBarPreference
         android:key="navigation_bar_height"
@@ -70,6 +75,11 @@
         settings:unitsLeft=""
         settings:unitsRight="dp"
         android:defaultValue="42" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="navigation_bar"
+        android:title="@string/navigation_bar_category" >
 
     <PreferenceScreen
         android:key="navigation_bar"
