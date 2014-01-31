@@ -40,6 +40,7 @@ public class ColorSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_DATA_COLOR = "status_bar_data_color";
     private static final String STATUS_BAR_AIRPLAIN_COLOR = "status_bar_airplain_color";
     private static final String STATUS_BAR_BATTERYMETER_FRAME_COLOR = "status_bar_batterymeter_frame_color";
+    private static final String STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR = "status_bar_batterymeter_normal_frame_color";
     private static final String STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR = "status_bar_batterymeter_circle_bolt_color";
     private static final String STATUS_BAR_BATTERYMETER_CHARGE_COLOR = "status_bar_batterymeter_charge_color";
     private static final String STATUS_BAR_BATTERYMETER_BOLT_COLOR = "status_bar_batterymeter_bolt_color";
@@ -53,6 +54,7 @@ public class ColorSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mStatusBarBatteryMeterCircleBoltColor;
     private ColorPickerPreference mStatusBarBatteryMeterChargeColor;
     private ColorPickerPreference mStatusBarBatteryMeterBoltColor;
+    private ColorPickerPreference mStatusBarBatteryMeterNormalFrameColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,6 +105,11 @@ public class ColorSettings extends SettingsPreferenceFragment implements
         int Color8 = Settings.System.getInt(getActivity().getContentResolver(), STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR, -1);
         mStatusBarBatteryMeterCircleBoltColor.setNewPreviewColor(Color8);
         mStatusBarBatteryMeterCircleBoltColor.setOnPreferenceChangeListener(this);
+
+	mStatusBarBatteryMeterNormalFrameColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR);
+	int Color9 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR, 1728053247);
+	mStatusBarBatteryMeterNormalFrameColor.setNewPreviewColor(Color9);
+	mStatusBarBatteryMeterNormalFrameColor.setOnPreferenceChangeListener(this);
     }
     @Override
     public void onResume() {
@@ -160,9 +167,12 @@ public class ColorSettings extends SettingsPreferenceFragment implements
 		                Settings.System.putInt(getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR, color8);
 	    return true;
-	}
+	} else if ( preference == mStatusBarBatteryMeterNormalFrameColor ) {
+		int color9 = ((Integer)newValue).intValue();
+				Settings.System.putInt(getContentResolver(),
+		Settings.System.STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR, color9);
+	    return true;
+        }
 	return false;
     }
-
-
 }
