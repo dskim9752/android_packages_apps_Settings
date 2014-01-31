@@ -44,6 +44,7 @@ public class ColorSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR = "status_bar_batterymeter_circle_bolt_color";
     private static final String STATUS_BAR_BATTERYMETER_CHARGE_COLOR = "status_bar_batterymeter_charge_color";
     private static final String STATUS_BAR_BATTERYMETER_BOLT_COLOR = "status_bar_batterymeter_bolt_color";
+    private static final String STATUS_BAR_VOLUME_COLOR = "status_bar_volume_color";
 
     private ColorPickerPreference mStatusBarNetStatsColor;
     private ColorPickerPreference mStatusBarClockColor;
@@ -55,6 +56,7 @@ public class ColorSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mStatusBarBatteryMeterChargeColor;
     private ColorPickerPreference mStatusBarBatteryMeterBoltColor;
     private ColorPickerPreference mStatusBarBatteryMeterNormalFrameColor;
+    private ColorPickerPreference mStatusBarVolumeColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -110,6 +112,11 @@ public class ColorSettings extends SettingsPreferenceFragment implements
 	int Color9 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR, 1728053247);
 	mStatusBarBatteryMeterNormalFrameColor.setNewPreviewColor(Color9);
 	mStatusBarBatteryMeterNormalFrameColor.setOnPreferenceChangeListener(this);
+
+	mStatusBarVolumeColor = (ColorPickerPreference) findPreference(STATUS_BAR_VOLUME_COLOR);
+	int Color10 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_VOLUME_COLOR, -1);
+	mStatusBarVolumeColor.setNewPreviewColor(Color10);
+	mStatusBarVolumeColor.setOnPreferenceChangeListener(this);
     }
     @Override
     public void onResume() {
@@ -172,7 +179,12 @@ public class ColorSettings extends SettingsPreferenceFragment implements
 				Settings.System.putInt(getContentResolver(),
 		Settings.System.STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR, color9);
 	    return true;
-        }
+        } else if ( preference == mStatusBarVolumeColor ) {
+		int color10 = ((Integer)newValue).intValue();
+                                Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_VOLUME_COLOR, color10);
+	    return true;
+	}
 	return false;
     }
 }
