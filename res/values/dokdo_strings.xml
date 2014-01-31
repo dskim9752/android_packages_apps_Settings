@@ -299,7 +299,8 @@
     <string name="status_bar_clock_color">StatusBar Clock Color</string>
     <string name="status_bar_wifi_color">StatusBar Wifi Color</string>
     <string name="status_bar_data_color">StatusBar Data Color</string>
-    <string name="status_bar_show_network_stats_color_title">Traffic meter Color</string>
+    <string name="status_bar_show_network_stats_color_title">StatusBar Traffic meter Color</string>
+    <string name="status_bar_volume_color">StatusBar Volume Color</string>
     <string name="status_bar_color_setting">Color Settings</string>
     <string name="status_bar_airplain_color">StatusBar Airplain Color</string>
     <string name="batterymeter_frame_color">Circle Battery Frame Color</string>
