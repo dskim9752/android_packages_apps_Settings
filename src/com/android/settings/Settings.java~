@@ -86,6 +86,7 @@ import com.android.settings.cyanogenmod.SystemUiSettings;
 import com.android.settings.cyanogenmod.superuser.PolicyNativeFragment;
 import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
+import com.android.settings.dokdo.Dokdo_DevelopmentSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
@@ -182,9 +183,9 @@ public class Settings extends PreferenceActivity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.interface_section,
-            R.id.lock_screen_settings,
             R.id.system_settings,
             R.id.privacy_settings_cyanogenmod,
+            R.id.dokdo_development_settings,
             R.id.button_settings
     };
 
@@ -383,9 +384,14 @@ public class Settings extends PreferenceActivity
         ProfilesSettings.class.getName(),
         PerformanceSettings.class.getName(),
         PolicyNativeFragment.class.getName(),
+<<<<<<< HEAD
         com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
         com.android.settings.quicksettings.QuickSettingsTiles.class.getName(),
         com.android.settings.cyanogenmod.QuietHours.class.getName()
+=======
+        Dokdo_DevelopmentSettings.class.getName(),
+        com.android.settings.cyanogenmod.PrivacySettings.class.getName()
+>>>>>>> Dokdo Developer options
     };
 
     @Override
@@ -658,13 +664,12 @@ public class Settings extends PreferenceActivity
                         target.remove(i);
                     }
                 }
-            } else if (id == R.id.account_add) {
-                if (um.hasUserRestriction(UserManager.DISALLOW_MODIFY_ACCOUNTS)) {
+            } else if (id == R.id.dokdo_development_settings) {
+                if (!showDev) {
                     target.remove(i);
                 }
-<<<<<<< HEAD
-            } else if (id == R.id.superuser) {
-                if (!DevelopmentSettings.isRootForAppsEnabled()) {
+            } else if (id == R.id.account_add) {
+                if (um.hasUserRestriction(UserManager.DISALLOW_MODIFY_ACCOUNTS)) {
                     target.remove(i);
                 }
             } else if (id == R.id.multi_sim_settings) {
@@ -674,8 +679,6 @@ public class Settings extends PreferenceActivity
                 if(!Utils.isPackageInstalled(this, VOICE_WAKEUP_PACKAGE_NAME)) {
                     target.remove(header);
                 }
-=======
->>>>>>> Initialize
             }
 
             if (i < target.size() && target.get(i) == header

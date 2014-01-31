@@ -86,6 +86,7 @@ import com.android.settings.cyanogenmod.SystemUiSettings;
 import com.android.settings.cyanogenmod.superuser.PolicyNativeFragment;
 import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
+import com.android.settings.dokdo.Dokdo_DevelopmentSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
@@ -184,6 +185,7 @@ public class Settings extends PreferenceActivity
             R.id.interface_section,
             R.id.system_settings,
             R.id.privacy_settings_cyanogenmod,
+            R.id.dokdo_development_settings,
             R.id.button_settings
     };
 
@@ -382,6 +384,7 @@ public class Settings extends PreferenceActivity
         ProfilesSettings.class.getName(),
         PerformanceSettings.class.getName(),
         PolicyNativeFragment.class.getName(),
+        Dokdo_DevelopmentSettings.class.getName(),
         com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
         com.android.settings.quicksettings.QuickSettingsTiles.class.getName(),
         com.android.settings.cyanogenmod.QuietHours.class.getName()
@@ -656,6 +659,10 @@ public class Settings extends PreferenceActivity
                             PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
                         target.remove(i);
                     }
+                }
+            } else if (id == R.id.dokdo_development_settings) {
+                if (!showDev) {
+                    target.remove(i);
                 }
             } else if (id == R.id.account_add) {
                 if (um.hasUserRestriction(UserManager.DISALLOW_MODIFY_ACCOUNTS)) {
