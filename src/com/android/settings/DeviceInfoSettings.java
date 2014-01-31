@@ -65,7 +65,10 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
 
+    static final int TAPS_TO_BE_A_DEVELOPER = 100;
     long[] mHits = new long[3];
+    int mDevHitCountdown;
+    Toast mDevHitToast;
 
     public DeviceInfoSettings() {
         super(null /* Don't PIN protect the entire screen */);
@@ -76,6 +79,10 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.device_info_settings);
+
+        // We only call ensurePinRestrictedPreference() when mDevHitCountdown == 0.
+        // This will keep us from entering developer mode without a PIN.
+        protectByRestrictions(KEY_BUILD_NUMBER);
 
         setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
         findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
@@ -156,6 +163,10 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     @Override
     public void onResume() {
         super.onResume();
+        mDevHitCountdown = getActivity().getSharedPreferences(DevelopmentSettings.PREF_FILE,
+                Context.MODE_PRIVATE).getBoolean(DevelopmentSettings.PREF_SHOW,
+                        android.os.Build.TYPE.equals("eng")) ? -1 : TAPS_TO_BE_A_DEVELOPER;
+        mDevHitToast = null;
     }
 
     @Override
@@ -171,6 +182,23 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
+            }
+        } else if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
+            // Don't enable developer options for secondary users.
+            if (UserHandle.myUserId() != UserHandle.USER_OWNER) return true;
+
+            if (mDevHitCountdown > 0) {
+                if (mDevHitCountdown == 1) {
+                    if (super.ensurePinRestrictedPreference(preference)) {
+                        return true;
+                    }
+                }
+                mDevHitCountdown--;
+                if (mDevHitCountdown == 0) {
+                    getActivity().getSharedPreferences(DevelopmentSettings.PREF_FILE,
+                            Context.MODE_PRIVATE).edit().putBoolean(
+                                    DevelopmentSettings.PREF_SHOW, true).apply();
                 }
             }
         }

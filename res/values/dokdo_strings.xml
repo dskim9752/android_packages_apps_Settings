@@ -19,6 +19,9 @@
     <string name="dokdo_settings_title">Customize</string>
     <string name="etc_category_title">Etc</string>
 
+    <!-- Development Settings.  the title for the item to take the user to Development settings.  Development settings are settings meant for application developers.  -->
+    <string name="dokdo_development_settings_title">Dokdo Developer options</string>
+
     <!-- Dokdo Info -->
     <string name="dokdo_title">Dokdo ROM Information</string>
     <string name="dokdo_title_summary">Bug Report, Source Code, and other information</string>
