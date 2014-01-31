@@ -56,6 +56,11 @@
             android:title="@string/batterymeter_circle_bolt_color" />
 
       <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+            android:key="status_bar_batterymeter_normal_frame_color"
+            android:summary="Default:#66FFFFFF"
+            android:title="@string/batterymeter_normal_frame_color" />
+
+      <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
             android:key="status_bar_batterymeter_charge_color"
             android:summary="Default:#FFFFFFFF"
             android:title="@string/batterymeter_charge_color" />
