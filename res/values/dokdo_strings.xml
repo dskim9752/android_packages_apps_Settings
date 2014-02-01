@@ -309,4 +309,8 @@
     <string name="batterymeter_circle_bolt_color">Circle Battery Bolt Color</string>
     <string name="batterymeter_charge_color">Battery Charge Color</string>
     <string name="batterymeter_bolt_color">Battery Bolt Color</string>
+    <string name="DefaultColor_66FFFFFF">Default:#66FFFFFF</string>
+    <string name="DefaultColor_FFFFFFFF">Default:#FFFFFFFF</string>
+    <string name="DefaultColor_B2000000">Default:#B2000000</string>
+
 </resources>
