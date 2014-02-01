@@ -190,23 +190,41 @@
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">커스텀 프로그레스 바</string>
     <string name="progressbar_mirror_title">거울 모드</string>
-    <string name="progressbar_reverse_title">Reversed</string>
+    <string name="progressbar_reverse_title">반전 모드</string>
     <string name="progressbar_speed_title">속도</string>
-    <string name="progressbar_width_title">Stroke Width</string>
-    <string name="progressbar_length_title">Separator length</string>
-    <string name="progressbar_count_title">Sections Count</string>
-    <string name="progressbar_color_1_title">Color1</string>
-    <string name="progressbar_color_2_title">Color2</string>
-    <string name="progressbar_color_3_title">Color3</string>
-    <string name="progressbar_color_4_title">Color4</string>
+    <string name="progressbar_width_title">굵기</string>
+    <string name="progressbar_length_title">분할 간격</string>
+    <string name="progressbar_count_title">분할 갯수</string>
+    <string name="progressbar_color_1_title">색상1</string>
+    <string name="progressbar_color_2_title">색상2</string>
+    <string name="progressbar_color_3_title">색상3</string>
+    <string name="progressbar_color_4_title">색상4</string>
     <string name="sample_progressbar_text">프로그레스 바 : 미리보기</string>
 
     <!-- Navbar Settings -->
     <string name="navigation_bar_height">네비게이션 바 높이</string>
     <string name="navigation_bar_width">네비게이션 바 폭</string>
     <string name="navigation_bar_toggle">네비게이션 바 토글</string>
-    <string name="navigation_bar_height_summary">Set NavBar Height Size: Reboot</string>
-    <string name="navigation_bar_width_summary">Set NavBar Width Size: Reboot</string>
-    <string name="navigation_bar_toggle_summary">NavBar Toggle: Reboot</string>
+    <string name="navigation_bar_height_summary">네비게이션 바 높이 설정: 제부팅</string>
+    <string name="navigation_bar_width_summary">네비게이션 바 폭 설정: 제부팅</string>
+    <string name="navigation_bar_toggle_summary">네비게이션 바 토글: 제부팅</string>
     <string name="navigation_bar_control">네비게이션 바 제어</string>
+
+    <!--StatusBar Color -->
+    <string name="status_bar_clock_color">상단바 시계 색상</string>
+    <string name="status_bar_wifi_color">상단바 와이파이 색상</string>
+    <string name="status_bar_data_color">상단바 데이터 색상</string>
+    <string name="status_bar_show_network_stats_color_title">상단바 네트워크 지표 색상</string>
+    <string name="status_bar_volume_color">상단바 볼륨 색상</string>
+    <string name="status_bar_color_setting">색상 설정</string>
+    <string name="status_bar_airplain_color">상단바 비행기모드 색상</string>
+    <string name="batterymeter_frame_color">원 배터리 프레임 색상</string>
+    <string name="batterymeter_normal_frame_color">배터리 프레임 색상</string>
+    <string name="batterymeter_circle_bolt_color">원 배터리 번개 색상</string>
+    <string name="batterymeter_charge_color">배터리 충전 색상</string>
+    <string name="batterymeter_bolt_color">배터리 번개 색상</string>
+    <string name="DefaultColor_66FFFFFF">기본색상:#66FFFFFF</string>
+    <string name="DefaultColor_FFFFFFFF">기본색상:#FFFFFFFF</string>
+    <string name="DefaultColor_B2000000">기본색상:#B2000000</string>
+
 </resources>
