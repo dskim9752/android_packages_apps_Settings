@@ -33,6 +33,7 @@
 
   <PreferenceCategory android:title="@string/main_title">
     <PreferenceScreen android:key="changelog"
+               android:enabled="false"
                android:title="@string/changelog_title"
                android:icon="@drawable/settings_changelog"
                android:fragment="com.android.settings.cyanogenmod.ChangeLog" >
@@ -46,6 +47,7 @@
     </PreferenceScreen>
     <Preference android:key="send_email"
                 android:icon="@drawable/settings_bug_report"
+                android:enabled="false"
                 android:title="@string/dokdo_email_title"
                 android:summary="@string/dokdo_email_summary" />
     <Preference android:key="go_facebook"
