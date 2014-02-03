@@ -18,6 +18,12 @@
     <PreferenceScreen android:layout="@layout/dokdo_logo"
                       android:selectable="false">
     </PreferenceScreen>
+    <PreferenceScreen android:key="dokdo_updater"
+                android:title="@string/dokdo_updater_title">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.neighbors28.dokdo.otaupdater"
+                android:targetClass="com.neighbors28.dokdo.otaupdater.OTAUpdaterActivity" />
+    </PreferenceScreen>
     <Preference android:key="dokdo_version"
                 android:icon="@drawable/settings_dokdo_version"
                 android:title="@string/dokdo_version"

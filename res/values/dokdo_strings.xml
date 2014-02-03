@@ -25,6 +25,7 @@
     <!-- Dokdo Info -->
     <string name="dokdo_title">Dokdo ROM Information</string>
     <string name="dokdo_title_summary">Bug Report, Source Code, and other information</string>
+    <string name="dokdo_updater_title">Dokdo-Project Update</string>
     <string name="copyright_list_title">Copyright list</string>
     <string name="dokdo_version">Dokdo ROM version</string>
     <string name="dokdo_email_title">Bug report</string>
