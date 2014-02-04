@@ -24,19 +24,24 @@
 
     <!-- Dokdo Info -->
     <string name="dokdo_title">Dokdo ROM Information</string>
-    <string name="dokdo_title_summary">Bug Report, Source Code, and other information</string>
-    <string name="dokdo_updater_title">Dokdo-Project Update</string>
-    <string name="copyright_list_title">Copyright list</string>
-    <string name="dokdo_version">Dokdo ROM version</string>
-    <string name="dokdo_email_title">Bug report</string>
-    <string name="dokdo_email_summary">Send an email to Developer</string>
-    <string name="dokdo_facebook_title">Facebook page</string>
-    <string name="dokdo_facebook_summary">Visit Dokdo Project official Facebook page</string>
+    <string name="dokdo_title_summary">OTAUpdate, Bug Report, and other information</string>
+    <string name="main_title">Main</string>
+    <string name="update_title">Update</string>
+    <string name="dokdo_version">Dokdo-Project version</string>
     <string name="build_id">Build ID</string>
     <string name="build_id_default">Unknown</string>
     <string name="build_user">Build User</string>
     <string name="build_user_default">Unknown</string>
-    <string name="main_title">Main</string>
+    <string name="dokdo_updater_title">Software Update</string>
+    <string name="dokdo_updater_summary">Update the latest version</string>
+    <string name="copyright_list_title">Copyright list</string>
+    <string name="copyright_list_summary">Copyright of Source codes used in Dokdo-Project and Credits</string>
+    <string name="dokdo_changelog_title">Changelog</string>
+    <string name="dokdo_changelog_summary">See changelogs untill the latest version</string>
+    <string name="dokdo_email_title">Bug report</string>
+    <string name="dokdo_email_summary">Send an email to Developer</string>
+    <string name="dokdo_facebook_title">Facebook page</string>
+    <string name="dokdo_facebook_summary">Visit Dokdo Project official Facebook page</string>
 
     <!-- Dokdo Platlogo -->
     <string name="photo_name">We are Dokdo-Project</string>
@@ -81,7 +86,7 @@
     <string name="clock_date_format_custom">Custom java format</string>
 
     <!-- ListView animation -->
-    <string name="listview_category">ListView Animation</string>
+    <string name="listview_category">Listview Animation</string>
     <string name="listview_animation_title">ListView Animation</string>
     <string name="listview_off">Off</string>
     <string name="listview_wave_left">Wave (Left)</string>
@@ -96,7 +101,7 @@
     <string name="listview_translate_right">Translate (Right)</string>
 
     <!-- ListView interpolator -->
-    <string name="listview_interpolator_title">ListView Interpolator</string>
+    <string name="listview_interpolator_title">Listview Interpolator</string>
     <string name="listview_accelerate_interpolator">accelerate_interpolator</string>
     <string name="listview_decelerate_interpolator">decelerate_interpolator</string>
     <string name="listview_accelerate_decelerate_interpolator">accelerate_decelerate_interpolator</string>
@@ -248,7 +253,7 @@
     <string name="layout">Layout</string>
     <string name="privacy">Privacy</string>
 
-    <string name="lockscreen_notifications">Lockscreen notifications</string>
+    <string name="lockscreen_notifications">Lock screen notifications</string>
     <string name="lockscreen_notifications_summary">Show pending notifications on lockscreen</string>
     <string name="pocket_mode">Pocket mode</string>
     <string name="pocket_mode_summary">Turn screen on and show all notifications when device is pulled out of pocket. Turn screen off when device gets back into pocket.</string>
