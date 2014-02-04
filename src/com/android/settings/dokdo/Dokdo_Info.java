@@ -49,7 +49,6 @@ public class Dokdo_Info extends PreferenceFragment {
     Preference mEmail;
     Preference mFacebook;
 
-    long[] mHits = new long[4];
     int mDevHitCountdown;
 
     @Override
@@ -83,18 +82,6 @@ public class Dokdo_Info extends PreferenceFragment {
             alertDialog.show();
         } else if (preference == mFacebook) {
             facebook("https://www.facebook.com/projectdokdo");
-        } else if (preference.getKey().equals(KEY_MOD_VERSION)) {
-            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
-            mHits[mHits.length-1] = SystemClock.uptimeMillis();
-            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
-                Intent intent = new Intent();
-		intent.setClassName("com.android.settings", "com.android.settings.dokdo.Dokdo_Platlogo");
-                try {
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
-                }
-            }
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
