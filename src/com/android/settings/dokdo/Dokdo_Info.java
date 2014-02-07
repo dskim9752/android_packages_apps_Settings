@@ -76,7 +76,7 @@ public class Dokdo_Info extends PreferenceFragment {
                     getResources().getString(com.android.internal.R.string.ok),
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                        email("mailto:sjp0728@gmail.com");
+                        email("mailto:projectdokdoteam@gmail.com");
                         }
                     });
             alertDialog.show();
