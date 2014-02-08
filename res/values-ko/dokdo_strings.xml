@@ -711,9 +711,9 @@
     <string name="navigation_bar_height">네비게이션 바 높이</string>
     <string name="navigation_bar_width">네비게이션 바 폭</string>
     <string name="navigation_bar_toggle">네비게이션 바 토글</string>
-    <string name="navigation_bar_height_summary">네비게이션 바 높이 설정: 제부팅</string>
-    <string name="navigation_bar_width_summary">네비게이션 바 폭 설정: 제부팅</string>
-    <string name="navigation_bar_toggle_summary">네비게이션 바 토글: 제부팅</string>
+    <string name="navigation_bar_height_summary">네비게이션 바 높이 설정: 재부팅</string>
+    <string name="navigation_bar_width_summary">네비게이션 바 폭 설정: 재부팅</string>
+    <string name="navigation_bar_toggle_summary">네비게이션 바 토글: 재부팅</string>
     <string name="navigation_bar_control">네비게이션 바 제어</string>
 
     <!--StatusBar Color -->
