@@ -29,7 +29,6 @@ import java.util.Set;
 public class LockscreenNotifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_LOCKSCREEN_NOTIFICATIONS = "lockscreen_notifications";
-    private static final String KEY_POCKET_MODE = "pocket_mode";
     private static final String KEY_SHOW_ALWAYS = "show_always";
     private static final String KEY_HIDE_LOW_PRIORITY = "hide_low_priority";
     private static final String KEY_HIDE_NON_CLEARABLE = "hide_non_clearable";
@@ -68,11 +67,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mLockscreenNotifications = (CheckBoxPreference) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATIONS);
         mLockscreenNotifications.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS, 1) == 1);
-
-        mPocketMode = (CheckBoxPreference) prefs.findPreference(KEY_POCKET_MODE);
-        mPocketMode.setChecked(Settings.System.getInt(cr,
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 0) == 1);
-        mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
 
         mShowAlways = (CheckBoxPreference) prefs.findPreference(KEY_SHOW_ALWAYS);
         mShowAlways.setChecked(Settings.System.getInt(cr,
@@ -164,10 +158,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
             mForceExpandedView.setEnabled(mLockscreenNotifications.isChecked() && mExpandedView.isChecked()
                         && !mPrivacyMode.isChecked());
             mExpandedView.setEnabled(mLockscreenNotifications.isChecked() && !mPrivacyMode.isChecked());
-        } else if (preference == mPocketMode) {
-            Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE,
-                    mPocketMode.isChecked() ? 1 : 0);
-            mShowAlways.setEnabled(mPocketMode.isChecked());
         } else if (preference == mShowAlways) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS,
                     mShowAlways.isChecked() ? 1 : 0);
