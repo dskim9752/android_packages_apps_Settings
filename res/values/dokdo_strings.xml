@@ -324,4 +324,11 @@
     <string name="lock_pattern_size_8">8x8</string>
     <string name="lock_pattern_size_9">9x9</string>
     <string name="lock_pattern_size_10">10x10</string>
+
+    <!-- Weather Tile Preference -->
+    <string name="pref_weather_tile">Weather Tile</string>
+    <string name="pref_weather_tile_iconset">Weather Tile Icon</string>
+    <string name="weather_tile_color">Color Icon</string>
+    <string name="weather_tile_mono">Mono Icon</string>
+    <string name="weather_tile_vclouds">vClouds Icon</string>
 </resources>
