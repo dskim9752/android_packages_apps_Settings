@@ -737,4 +737,7 @@
     <string name="custom_runtime_warning_title">경고</string>
     <string name="custom_runtime_warning_message">독도프로젝트에서는 ART런타임을 정식으로 지원하지 않습니다. ART런타임을 사용하면 사용자의 기기에 치명적인 문제를 유발할 수 있으며, 데이터 손실이나 정상적인 부팅불가 등의 문제가 발생할 수 있습니다. 자세한 ART런타임에 대한 정보는 &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;ART런타임 정보&lt;/a&gt; 에 방문하여 관련 문서를 참조하세요.&lt;br/&gt;&lt;br/&gt;독도프로젝트는 사용자가 ART런타임을 사용중 문제가 발생하면 책임지지않으며, 관련 버그리포트 또한 받지 않습니다.&lt;br/&gt;&lt;br/&gt;정말 런타임을 Dalvik에서 ART로 변경하시겠습니까?</string>
 
+    <!-- Weather Tile Preference -->
+    <string name="pref_weather_tile">날씨 타일</string>
+    <string name="pref_weather_tile_iconset">날씨 타일 아이콘</string>
 </resources>

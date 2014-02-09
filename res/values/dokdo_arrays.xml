@@ -287,4 +287,18 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+
+    <!-- Weather Tile -->
+    <string-array name="weather_tile_entries">
+	<item>@string/weather_tile_color</item>
+	<item>@string/weather_tile_mono</item>
+	<item>@string/weather_tile_vclouds</item>
+    </string-array>
+
+    <string-array name="weather_tile_values">
+	<item>color</item>
+	<item>mono</item>
+	<item>vclouds</item>
+    </string-array>
+
 </resources>
