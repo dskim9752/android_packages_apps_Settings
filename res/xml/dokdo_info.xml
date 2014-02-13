@@ -48,7 +48,6 @@
 
   <PreferenceCategory android:title="@string/main_title">
     <Preference android:key="send_email"
-                android:enabled="false"
                 android:title="@string/dokdo_email_title"
                 android:summary="@string/dokdo_email_summary" />
     <Preference android:key="go_facebook"
