@@ -46,10 +46,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_ENABLE_WIDGETS = "keyguard_enable_widgets";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_ENABLE_CAMERA = "keyguard_enable_camera";
+    private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mEnableKeyguardWidgets;
     private CheckBoxPreference mEnableCameraWidget;
+    private SeekBarPreference mlockscreenblur_radius;
 
     private ChooseLockSettingsHelper mChooseLockSettingsHelper;
     private LockPatternUtils mLockUtils;
@@ -107,6 +109,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             widgetsCategory.removePreference(
                     findPreference(Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS));
         }
+        mlockscreenblur_radius = (SeekBarPreference)findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
+        mlockscreenblur_radius.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_BLUR_RADIUS, 16));
+        mlockscreenblur_radius.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -157,8 +163,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_BATTERY_VISIBILITY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
-        }
-
+        } else if (preference == mlockscreenblur_radius) {
+            int value = ((Integer)objValue).intValue();
+	    Settings.System.putInt(cr, Settings.System.LOCKSCREEN_BLUR_RADIUS, value);
+	    return true;
+	}
         return false;
     }
 

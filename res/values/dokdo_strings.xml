@@ -164,6 +164,8 @@
     <!--Lockscreen blur-->
     <string name="lockscreen_blur_title">Blur effect</string>
     <string name="lockscreen_blur_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+    <string name="lockscreen_blur_radius_title">Blur effect strength</string>
+    <string name="lockscreen_blur_radius_summary">Set Lockscreen Blur effect Strength</string>
 
    <!-- Advanced low battery indicator options -->  
     <string name="lights_and_warnings_title">Lights and warnings</string>

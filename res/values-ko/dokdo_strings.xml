@@ -638,6 +638,8 @@
     <!--Lockscreen blur-->
     <string name="lockscreen_blur_title">블러 이펙트</string>
     <string name="lockscreen_blur_summary">잠금화면 배경화면을 블러 처리하여 잠금화면 배경화면이 반투명하게 변경됩니다.</string>
+    <string name="lockscreen_blur_radius_title">블러 이펙트 세기</string>
+    <string name="lockscreen_blur_radius_summary">잠금화면 블러 이펙트 세기를 설정합니다.</string>
 
     <!-- DPI Tool -->
     <string name="current_dpi">현재 적용된 밀도값</string>
