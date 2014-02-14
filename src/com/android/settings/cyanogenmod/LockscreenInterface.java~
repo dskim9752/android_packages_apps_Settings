@@ -64,22 +64,28 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_ENABLE_WIDGETS = "keyguard_enable_widgets";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_ENABLE_CAMERA = "keyguard_enable_camera";
+<<<<<<< HEAD
     private static final String KEY_ENABLE_MAXIMIZE_WIGETS = "lockscreen_maximize_widgets";
     private static final String LOCKSCREEN_BACKGROUND_STYLE = "lockscreen_background_style";
     private static final String KEY_LOCKSCREEN_MODLOCK_ENABLED = "lockscreen_modlock_enabled";
-    private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private static final String LOCKSCREEN_WALLPAPER_TEMP_NAME = ".lockwallpaper";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
+=======
+    private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
+>>>>>>> Lockscreen Blur: Customize Lockscreen Blur Effect Blur Strength[1/2]
 
     private CheckBoxPreference mEnableKeyguardWidgets;
     private CheckBoxPreference mEnableCameraWidget;
-    private SeekBarPreference mlockscreenblur_radius;
+<<<<<<< HEAD
     private CheckBoxPreference mEnableModLock;
     private CheckBoxPreference mEnableMaximizeWidgets;
     private ListPreference mLockBackground;
     private ListPreference mBatteryStatus;
+=======
+    private SeekBarPreference mlockscreenblur_radius;
+>>>>>>> Lockscreen Blur: Customize Lockscreen Blur Effect Blur Strength[1/2]
 
     private ChooseLockSettingsHelper mChooseLockSettingsHelper;
     private LockPatternUtils mLockUtils;
@@ -155,17 +161,19 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             widgetsCategory.removePreference(
                     mEnableMaximizeWidgets);
         }
+<<<<<<< HEAD
 
         mLockBackground = (ListPreference) findPreference(LOCKSCREEN_BACKGROUND_STYLE);
         mLockBackground.setOnPreferenceChangeListener(this);
 
         mTempWallpaper = getActivity().getFileStreamPath(LOCKSCREEN_WALLPAPER_TEMP_NAME);
         mWallpaper = LockscreenBackgroundUtil.getWallpaperFile(getActivity());
-
+=======
         mlockscreenblur_radius = (SeekBarPreference)findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
         mlockscreenblur_radius.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKSCREEN_BLUR_RADIUS, 16));
         mlockscreenblur_radius.setOnPreferenceChangeListener(this);
+>>>>>>> Lockscreen Blur: Customize Lockscreen Blur Effect Blur Strength[1/2]
     }
 
     @Override
@@ -249,6 +257,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_BATTERY_VISIBILITY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
+<<<<<<< HEAD
         } else if (preference == mLockBackground) {
             int index = mLockBackground.findIndexOfValue((String) objValue);
             handleBackgroundSelection(index);
@@ -261,11 +270,15 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             ((CheckBoxPreference) preference).setChecked(value);
             updateAvailableModLockPreferences();
             return true;
+        }
+
+=======
         } else if (preference == mlockscreenblur_radius) {
             int value = ((Integer)objValue).intValue();
 	    Settings.System.putInt(cr, Settings.System.LOCKSCREEN_BLUR_RADIUS, value);
 	    return true;
 	}
+>>>>>>> Lockscreen Blur: Customize Lockscreen Blur Effect Blur Strength[1/2]
         return false;
     }
 
