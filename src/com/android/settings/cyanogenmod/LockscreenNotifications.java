@@ -29,7 +29,6 @@ import java.util.Set;
 public class LockscreenNotifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_LOCKSCREEN_NOTIFICATIONS = "lockscreen_notifications";
-    private static final String KEY_SHOW_ALWAYS = "show_always";
     private static final String KEY_HIDE_LOW_PRIORITY = "hide_low_priority";
     private static final String KEY_HIDE_NON_CLEARABLE = "hide_non_clearable";
     private static final String KEY_DISMISS_ALL = "dismiss_all";
@@ -43,7 +42,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private static final String KEY_EXCLUDED_APPS = "excluded_apps";
 
     private CheckBoxPreference mLockscreenNotifications;
-    private CheckBoxPreference mShowAlways;
     private CheckBoxPreference mWakeOnNotification;
     private CheckBoxPreference mHideLowPriority;
     private CheckBoxPreference mHideNonClearable;
@@ -66,11 +64,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mLockscreenNotifications = (CheckBoxPreference) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATIONS);
         mLockscreenNotifications.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS, 1) == 1);
-
-        mShowAlways = (CheckBoxPreference) prefs.findPreference(KEY_SHOW_ALWAYS);
-        mShowAlways.setChecked(Settings.System.getInt(cr,
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS, 1) == 1);
-        mShowAlways.setEnabled(mLockscreenNotifications.isChecked());
 
         mWakeOnNotification = (CheckBoxPreference) prefs.findPreference(KEY_WAKE_ON_NOTIFICATION);
         mWakeOnNotification.setChecked(Settings.System.getInt(cr,
@@ -131,12 +124,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         Set<String> excludedApps = getExcludedApps();
         if (excludedApps != null) mExcludedAppsPref.setValues(excludedApps);
         mExcludedAppsPref.setOnPreferenceChangeListener(this);
-
-        boolean hasProximitySensor = getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_PROXIMITY);
-        if (!hasProximitySensor) {
-            PreferenceCategory general = (PreferenceCategory) prefs.findPreference(KEY_CATEGORY_GENERAL);
-            general.removePreference(mShowAlways);
-        }
     }
 
     @Override
@@ -145,7 +132,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         if (preference == mLockscreenNotifications) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS,
                     mLockscreenNotifications.isChecked() ? 1 : 0);
-            mShowAlways.setEnabled(mLockscreenNotifications.isChecked());
             mWakeOnNotification.setEnabled(mLockscreenNotifications.isChecked());
             mHideLowPriority.setEnabled(mLockscreenNotifications.isChecked());
             mHideNonClearable.setEnabled(mLockscreenNotifications.isChecked());
@@ -155,9 +141,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
             mForceExpandedView.setEnabled(mLockscreenNotifications.isChecked() && mExpandedView.isChecked()
                         && !mPrivacyMode.isChecked());
             mExpandedView.setEnabled(mLockscreenNotifications.isChecked() && !mPrivacyMode.isChecked());
-        } else if (preference == mShowAlways) {
-            Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS,
-                    mShowAlways.isChecked() ? 1 : 0);
         } else if (preference == mWakeOnNotification) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION,
                     mWakeOnNotification.isChecked() ? 1 : 0);

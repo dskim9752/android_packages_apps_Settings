@@ -84,6 +84,7 @@
     <string name="clock_date_style_lowercase">Lowercase</string>
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Status bar Double tap to sleep</string>
 
     <!-- ListView animation -->
     <string name="listview_category">Listview Animation</string>
@@ -257,8 +258,6 @@
 
     <string name="lockscreen_notifications">Lock screen notifications</string>
     <string name="lockscreen_notifications_summary">Show pending notifications on lockscreen</string>
-    <string name="pocket_mode">Pocket mode</string>
-    <string name="pocket_mode_summary">Turn screen on and show all notifications when device is pulled out of pocket. Turn screen off when device gets back into pocket.</string>
     <string name="show_always">Show always</string>
     <string name="show_always_summary">Always turn screen on when pulled out of pocket, even when there are no notifications pending</string>
     <string name="hide_low_priority">Hide low priority</string>

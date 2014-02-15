@@ -12,11 +12,6 @@
             android:summary="@string/lockscreen_notifications_summary" />
 
         <CheckBoxPreference
-            android:key="show_always"
-            android:title="@string/show_always"
-            android:summary="@string/show_always_summary" />
-
-        <CheckBoxPreference
             android:key="wake_on_notification"
             android:title="@string/wake_on_notification"
             android:summary="@string/wake_on_notification_summary" />

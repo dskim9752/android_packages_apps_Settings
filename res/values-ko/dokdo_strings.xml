@@ -314,6 +314,8 @@
     <string name="cm_sound_mode_soundVibrate">소리 + 진동</string>
     <string name="kill_app_longpress_back">뒤로 버튼으로 앱 끄기</string>
     <string name="kill_app_longpress_back_summary">뒤로가기 버튼을 길게 눌러 사용중인 애플리케이션 종료</string>
+    <string name="kill_app_longpress_back_delay_title">뒤로 버튼으로 앱 끄기 딜레이</string>
+    <string name="kill_app_longpress_back_delay_summary">뒤로 버튼으로 앱 끄기 기능의 딜레이 값을 변경합니다.</string>
     <string name="changelog_title">변경 사항 보기</string>
     <string name="changelog_loading">변경 사항 불러오는 중\u2026</string>
     <string name="changelog_error">변경 사항을 불러올 수 없습니다.</string>
@@ -488,8 +490,8 @@
     <string name="adaptive_backlight_summary">지능적으로 화면의 밝기를 조절하여 배터리 수명 극대화</string>
     <string name="screen_off_animation_title">화면 꺼짐 애니메이션</string>
     <string name="screen_off_animation_summary">화면이 꺼질 때 애니메이션 표시</string>
-    <string name="wake_when_plugged_or_unplugged_title">전원 연결시 키기</string>
-    <string name="wake_when_plugged_or_unplugged_summary">충전기를 연결하거나 분리할 때 화면 키기</string>
+    <string name="wake_when_plugged_or_unplugged_title">전원 연결시 화면 켜기</string>
+    <string name="wake_when_plugged_or_unplugged_summary">충전기를 연결하거나 분리할 때 화면을 켭니다.</string>
     <string name="privacy_guard_switch_label">프라이버시 가드 활성화</string>
     <string name="privacy_guard_dlg_title">프라이버시 가드를 활성화하시겠습니까?</string>
     <string name="privacy_guard_dlg_text">프라이버시 가드가 활성화되면 앱은 연락처, 메시지 또는 통화기록과 같은 개인 정보에 접근 할 수 없습니다.</string>
@@ -531,8 +533,8 @@
     <string name="remove_blacklist_number_title">번호 삭제</string>
     <string name="remove_blacklist_entry">이 블랙리스트 번호를 삭제하시겠습니까?</string>
     <string name="button_backlight_title">백라이트</string>
-    <string name="button_backlight_enabled">버튼 조명 키기</string>
-    <string name="keyboard_backlight_enabled">키보드 조명 키기</string>
+    <string name="button_backlight_enabled">버튼 조명 켜기</string>
+    <string name="keyboard_backlight_enabled">키보드 조명 켜기</string>
     <string name="button_backlight_seekbar_title">버튼 밝기</string>
     <string name="keyboard_backlight_seekbar_title">키보드 밝기</string>
     <string name="backlight_timeout_title">조명 제한 시간</string>
@@ -553,6 +555,24 @@
     <string name="vibrator_warning">%1$d 이상의 값은 권장하지 않습니다.</string>
     <string name="accessibility_home_button_answers_call_prerefence_title">홈 버튼으로 전화 받기</string>
     <string name="gps_download_data_wifi_only">Wi-Fi로만 GPS 보조 데이터 다운</string>
+    <string name="display_lights_settings_title">디스플레이 &amp; 알림등</string>
+    <string name="privacy_settings_cyanogenmod_title">프라이버시</string>
+    <string name="status_bar_double_tap_to_sleep_title">두번 두드려 화면 끄기</string>
+    <string name="status_bar_double_tap_to_sleep_summary">상단바를 두번 두드려 화면을 끕니다.</string>
+    <string name="status_bar_battery_show_percent_title">배터리 잔량 &amp;표시</string>
+    <string name="clock_date_display">날짜 표시</string>
+    <string name="clock_date_style">날짜 표시 스타일</string>
+    <string name="clock_date_format">날짜 형식</string>
+    <string name="clock_date_string_edittext_title">날짜 형식을 입력하세요. 예)MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">아래에 문자열을 입력하세요.</string>
+    <string name="clock_date_display_none">표시하지 않기</string>
+    <string name="clock_date_display_small">작은 글꼴 크기</string>
+    <string name="clock_date_display_normal">일반 글꼴 크기</string>
+    <string name="clock_date_style_normal">표준</string>
+    <string name="clock_date_style_lowercase">소문자</string>
+    <string name="clock_date_style_uppercase">대문자</string>
+    <string name="clock_date_format_custom">사용자 정의 자바 형식</string>
+    <string name="lockscreen_custom_widgets_title">커스텀 위젯</string>
 
     <!-- Dokdo Settings -->
     <string name="dokdo_settings_title">커스터마이즈</string>
@@ -638,8 +658,8 @@
     <!--Lockscreen blur-->
     <string name="lockscreen_blur_title">블러 이펙트</string>
     <string name="lockscreen_blur_summary">잠금화면 배경화면을 블러 처리하여 잠금화면 배경화면이 반투명하게 변경됩니다.</string>
-    <string name="lockscreen_blur_radius_title">블러 이펙트 세기</string>
-    <string name="lockscreen_blur_radius_summary">잠금화면 블러 이펙트 세기를 설정합니다.</string>
+    <string name="lockscreen_blur_radius_title">블러 이펙트 투명도</string>
+    <string name="lockscreen_blur_radius_summary">잠금화면 블러 이펙트 투명도를 조절합니다.</string>
 
     <!-- DPI Tool -->
     <string name="current_dpi">현재 적용된 밀도값</string>
@@ -656,7 +676,7 @@
     <string name="dpi_null">값을 입력해주세요.</string>
     <string name="dpi_reboot">자동 재부팅</string>
     <string name="dpi_sucess">디스플레이 밀도 값이 적용 되었습니다. \n\n 재부팅후 사용해 주세요. \n\n 재부팅 하지 않고 값을 재 변경하여도 적용되지 않습니다.</string>
-    <string name="dpi_warning">*주의*\n\n\n아래에 적혀있는 해상도에 맞는 권장 DPI를 사용하지 않아 핸드폰에 생기는 문제는 책임지지 않습니다.\n\n값을 적고 확인을 눌러주세요 재부팅하셔야 적용됩니다.</string>
+    <string name="dpi_warning">*주의*\n\n\n아래에 적혀있는 해상도에 맞는 권장 DPI를 사용하지 않아 기기에 생기는 문제는 책임지지 않습니다.\n\n값을 적고 확인을 눌러주세요 재부팅하셔야 적용됩니다.</string>
 
     <!-- Statusbar Second Clock -->
     <string name="clock_use_second">초 시계</string>
@@ -679,8 +699,8 @@
     <string name="overscroll_glow_title">오버스크롤 색상</string>
 
     <!-- Sound settings screen, setting check box label -->
-    <string name="camera_sounds_title">카메라 촬영 소리</string>
-    <string name="camera_sounds_summary">경고: 촬영 소리를 끄는 것은 몇몇 지역에서는 불법입니다!</string>
+    <string name="camera_sounds_title">카메라 촬영음</string>
+    <string name="camera_sounds_summary">경고: 일부 국가에서는 카메라 촬영음을 끄는 행위는 불법으로 간주합니다.</string>
 
     <!-- Display Screen-on and off Electron beam animations -->
     <string name="screen_off_animation_title">화면꺼짐 애니메이션</string>
@@ -694,6 +714,28 @@
     <string name="general">일반</string>
     <string name="layout">레이아웃</string>
     <string name="privacy">사생활</string>
+
+    <string name="lockscreen_notifications">잠금 화면 알림</string>
+    <string name="lockscreen_notifications_summary">잠금 화면에서 확인하지 않은 알림을 표시합니다.</string>
+    <string name="hide_low_priority">낮은 우선 순위를 숨기기</string>
+    <string name="hide_low_priority_summary">구글NOW 날씨 알림과 같은 낮은 우선 순위 알림을 숨깁니다.</string>
+    <string name="hide_non_clearable">지울 수 없는 알림 숨기기</string>
+    <string name="hide_non_clearable_summary">지울 수 없는 중요알림을 숨깁니다.</string>
+    <string name="dismiss_all">모든 알림 지우기 허용</string>
+    <string name="dismiss_all_summary">지울 수 없는 알림을 포함해 모든 알림을 지울 수 있도록 설정합니다.(잠금화면 알림 레이아웃에서만 지워지고 상태바 알림 레이아웃에서는 지워지지 않습니다.)</string>
+    <string name="expanded_view">확장 알림보기</string>
+    <string name="expanded_view_summary">알림을 길게 누를 경우 알림을 확장되도록 설정합니다. 확장되도록 설정된 알림으로 인해 기기가 잠겨있어도 알림을 확장하여 개인 정보를 원하지 않는 사용자에게 보여줄 수 있습니다.</string>
+    <string name="force_expanded_view">강제 확장 알림보기</string>
+    <string name="force_expanded_view_summary">기본으로 확장된 알림을 표시합니다.(확장된 알림을 다시 확장되지 않도록 변경할 수 있습니다.)</string>
+    <string name="wake_on_notification">알림 깨우기</string>
+    <string name="wake_on_notification_summary">새로운 알림을 받을 때 기기가 화면을 자동으로 켭니다.</string>
+    <string name="notifications_height">알림 수</string>
+    <string name="notifications_height_summary">한 번에 표시되는 알림의 수를 설정합니다.</string>
+    <string name="offset_top">화면 상단에서 아래까지의 사이에서 알림 레이아웃 위치값 :</string>
+    <string name="privacy_mode">개인 정보 보호 모드</string>
+    <string name="privacy_mode_summary">알림 내용을 보이지 않도록 설정합니다.</string>
+    <string name="excluded_apps_title">알림 표시를 제외할 응용 프로그램</string>
+    <string name="excluded_apps_summary">제외 된 응용 프로그램은 잠금 화면에 알림을 표시하지 않습니다.</string>
 
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">커스텀 프로그레스 바</string>
@@ -742,4 +784,60 @@
     <!-- Weather Tile Preference -->
     <string name="pref_weather_tile">날씨 타일</string>
     <string name="pref_weather_tile_iconset">날씨 타일 아이콘</string>
+
+   <!-- Advanced low battery indicator options -->  
+    <string name="lights_and_warnings_title">조명 및 경고</string>
+    <string name="lights_and_warnings_style_title">스타일</string>
+    <string name="pref_low_battery_warning_policy_title">배터리 부족 경고</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">배터리 부족 경고 표시 방식</string>
+    <string name="low_battery_warning_policy_popup_sound">팝업 및 사운드</string>
+    <string name="low_battery_warning_policy_notif_sound">상태바 알림 및 소리</string>
+    <string name="low_battery_warning_policy_popup">팝업창만 표시</string>
+    <string name="low_battery_warning_policy_notif">상태바 알림만 표</string>
+    <string name="low_battery_warning_policy_sound">사운드만</string>
+    <string name="low_battery_warning_policy_disabled">끄기</string>
+
+    <!-- Network usage stats -->
+    <string name="status_bar_network_cat">네트워크 속도 측정기</string>
+    <string name="status_bar_network_header">네트워크 속도 측정기</string>
+    <string name="status_bar_network_title">네트워크 속도</string>
+    <string name="status_bar_show_network_stats_title">네트워크 속도 표시</string>
+    <string name="status_bar_network_stats_update_title">업데이트 빈도</string>
+
+    <!-- OnClick Fliptile animation -->
+    <string name="flip_qs_tiles_title">타일 뒤집기</string>
+    <string name="flip_qs_tiles_summary">타일을 누를때 뒤집는 효과가 발생됩니다.</string>
+
+    <!-- Performance Settings : Processor settings sub items -->
+    <string name="cpu_cur_freq_title">현재 CPU 클럭</string>
+    <string name="cpu_governors_title">CPU 정책</string>
+    <string name="cpu_min_freq_title">최소 CPU 클럭</string>
+    <string name="cpu_max_freq_title">최대 CPU 클럭</string>
+
+    <!-- Performance Settings : I/O scheduler settings title -->
+    <string name="io_scheds_title">I/O 스케줄러</string>
+
+    <!-- Performance Settings : I/O scheduler settings sub items -->
+    <string name="io_sched_title">I/O 스케줄러</string>
+
+    <!-- Performance Settings : Performance profile settings -->
+    <string name="perf_profile_title">프로필</string>
+
+    <!-- Memory Management -->
+    <string name="memory_management_title">메모리 관리</string>
+
+    <!-- KSM -->
+    <string name="pref_ksm_title">Kernel samepage merging (KSM)</string>
+    <string name="pref_ksm_summary">KSM은 물리 메모리 필요량을 줄이고 성능을 향상시킵니다.</string>
+    <!-- Purgeable Assets -->
+    <string name="pref_purgeable_assets_title">자원 제거 허용</string>
+    <string name="pref_purgeable_assets_summary">비트맵 메모리 자원을 제거하여 필요시 더 많은 메모리를 확보할 수 있습니다. (다시 시작 필요)</string>
+
+    <!-- Performance Settings : 16bpp Alpha -->
+    <string name="pref_use_16bpp_alpha_title">16비트 투명도</string>
+    <string name="pref_use_16bpp_alpha_summary">성능이 좋아지지만 화질이 안 좋아지고 그림이 깨져보일 수 있습니다. (다시 시작 필요)</string>
+    
+    <!-- Performance Settings : Set on boot option -->
+    <string name="performance_set_on_boot">켜질 때 설정</string>
+    <string name="performance_set_on_boot_summary">프로세서 설정을 켜질 때 적용합니다.</string>
 </resources>
