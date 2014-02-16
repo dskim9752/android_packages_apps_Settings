@@ -64,56 +64,67 @@ public class ColorSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.colorsetting);
 
 	 mStatusBarNetStatsColor = (ColorPickerPreference) findPreference(STATUS_BAR_SHOW_NETWORK_STATS_COLOR);
+	 mStatusBarNetStatsColor.setAlphaSliderEnabled(true);
 	 int Color1 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_SHOW_NETWORK_STATS_COLOR, -1);
 	 mStatusBarNetStatsColor.setNewPreviewColor(Color1);
 	 mStatusBarNetStatsColor.setOnPreferenceChangeListener(this);
 
 	mStatusBarClockColor = (ColorPickerPreference) findPreference(STATUS_BAR_CLOCK_COLOR);
+	mStatusBarClockColor.setAlphaSliderEnabled(true);
 	int Color = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_CLOCK_COLOR, -1);
  	mStatusBarClockColor.setNewPreviewColor(Color);
 	mStatusBarClockColor.setOnPreferenceChangeListener(this);
 
 	mStatusBarWifiColor = (ColorPickerPreference) findPreference(STATUS_BAR_WIFI_COLOR);
+	mStatusBarWifiColor.setAlphaSliderEnabled(true);
         int Color2 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_WIFI_COLOR, -1);
 	mStatusBarWifiColor.setNewPreviewColor(Color2);
 	mStatusBarWifiColor.setOnPreferenceChangeListener(this);
 
 	mStatusBarDataColor = (ColorPickerPreference) findPreference(STATUS_BAR_DATA_COLOR);
+	mStatusBarDataColor.setAlphaSliderEnabled(true);
         int Color3 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_DATA_COLOR, -1);
         mStatusBarDataColor.setNewPreviewColor(Color3);
 	mStatusBarDataColor.setOnPreferenceChangeListener(this);
 
 	mStatusBarAirplainColor = (ColorPickerPreference) findPreference(STATUS_BAR_AIRPLAIN_COLOR);
+	mStatusBarAirplainColor.setAlphaSliderEnabled(true);
         int Color4 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_AIRPLAIN_COLOR, -1);
         mStatusBarAirplainColor.setNewPreviewColor(Color4);
         mStatusBarAirplainColor.setOnPreferenceChangeListener(this);
 
         mStatusBarBatteryMeterFrameColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_FRAME_COLOR);
+	mStatusBarBatteryMeterFrameColor.setAlphaSliderEnabled(true);
         int Color5 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_FRAME_COLOR, 1728053247);
         mStatusBarBatteryMeterFrameColor.setNewPreviewColor(Color5);
-	 mStatusBarBatteryMeterFrameColor.setOnPreferenceChangeListener(this);
+        mStatusBarBatteryMeterFrameColor.setOnPreferenceChangeListener(this);
 
         mStatusBarBatteryMeterChargeColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_CHARGE_COLOR);
+	mStatusBarBatteryMeterChargeColor.setAlphaSliderEnabled(true);
         int Color6 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_CHARGE_COLOR, -1);
         mStatusBarBatteryMeterChargeColor.setNewPreviewColor(Color6);
         mStatusBarBatteryMeterChargeColor.setOnPreferenceChangeListener(this);
 
         mStatusBarBatteryMeterBoltColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_BOLT_COLOR);
-        int Color7 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_BOLT_COLOR, -1308622848);
-        mStatusBarBatteryMeterBoltColor.setNewPreviewColor(Color7);
+	mStatusBarBatteryMeterBoltColor.setAlphaSliderEnabled(true);
+	int Color7 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_BOLT_COLOR, -1308622848);
+	mStatusBarBatteryMeterBoltColor.setNewPreviewColor(Color7);
 	mStatusBarBatteryMeterBoltColor.setOnPreferenceChangeListener(this);
 
 	mStatusBarBatteryMeterCircleBoltColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR);
-        int Color8 = Settings.System.getInt(getActivity().getContentResolver(), STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR, -1);
-        mStatusBarBatteryMeterCircleBoltColor.setNewPreviewColor(Color8);
-        mStatusBarBatteryMeterCircleBoltColor.setOnPreferenceChangeListener(this);
+	mStatusBarBatteryMeterCircleBoltColor.setAlphaSliderEnabled(true);
+	int Color8 = Settings.System.getInt(getActivity().getContentResolver(), STATUS_BAR_BATTERYMETER_CIRCLE_BOLT_COLOR, -1);
+	mStatusBarBatteryMeterCircleBoltColor.setNewPreviewColor(Color8);
+	mStatusBarBatteryMeterCircleBoltColor.setOnPreferenceChangeListener(this);
 
 	mStatusBarBatteryMeterNormalFrameColor = (ColorPickerPreference) findPreference(STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR);
+	mStatusBarBatteryMeterNormalFrameColor.setAlphaSliderEnabled(true);
 	int Color9 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERYMETER_NORMAL_FRAME_COLOR, 1728053247);
 	mStatusBarBatteryMeterNormalFrameColor.setNewPreviewColor(Color9);
 	mStatusBarBatteryMeterNormalFrameColor.setOnPreferenceChangeListener(this);
 
 	mStatusBarVolumeColor = (ColorPickerPreference) findPreference(STATUS_BAR_VOLUME_COLOR);
+	mStatusBarVolumeColor.setAlphaSliderEnabled(true);
 	int Color10 = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_VOLUME_COLOR, -1);
 	mStatusBarVolumeColor.setNewPreviewColor(Color10);
 	mStatusBarVolumeColor.setOnPreferenceChangeListener(this);
