@@ -750,6 +750,14 @@
     <string name="progressbar_color_3_title">색상3</string>
     <string name="progressbar_color_4_title">색상4</string>
     <string name="sample_progressbar_text">프로그레스 바 : 미리보기</string>
+    <string name="progressbar_gnow">구글나우 프로그레스바 프리셋</string>
+    <string name="progressbar_gplus">구글플러스 프로그레스바 프리셋</string>
+    <string name="progressbar_interpolator">가속 애니메이션</string>
+    <string name="progressbar_none">애니메이션 없음</string>
+    <string name="progressbar_acclerate">가속 애니메이션</string>
+    <string name="progressbar_linear">선형 애니메이션</string>
+    <string name="progressbar_acceleratedecelerate">가감 애니메이션</string>
+    <string name="progressbar_decelerate">감속 애니메이션</string>
 
     <!-- Navbar Settings -->
     <string name="navigation_bar_height">네비게이션 바 높이</string>
