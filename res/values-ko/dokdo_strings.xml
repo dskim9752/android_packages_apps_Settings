@@ -848,4 +848,7 @@
     <!-- Performance Settings : Set on boot option -->
     <string name="performance_set_on_boot">켜질 때 설정</string>
     <string name="performance_set_on_boot_summary">프로세서 설정을 켜질 때 적용합니다.</string>
+
+    <!-- ToastAnimation -->
+    <string name="toast_animation_title">토스트 애니메이션</string>
 </resources>
