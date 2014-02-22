@@ -30,6 +30,7 @@ import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -151,6 +152,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 	mToastAnimation.setSummary(mToastAnimation.getEntry());
 	int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.TOAST_ANIMATION, 1);
 	mToastAnimation.setValueIndex(CurrentToastAnimation);
+        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
 	mToastAnimation.setOnPreferenceChangeListener(this);
 
 	}
@@ -189,6 +191,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 	    int index = mToastAnimation.findIndexOfValue((String) newValue);
 	    Settings.System.putString(getContentResolver(), Settings.System.TOAST_ANIMATION, (String) newValue);
 	    mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+	    Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
 	    return true;
 	}
         return false;
