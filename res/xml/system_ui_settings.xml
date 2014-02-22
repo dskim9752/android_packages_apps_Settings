@@ -161,6 +161,13 @@
         android:fragment="com.android.settings.dokdo.ListviewAnimation"
         android:title="@string/listview_category" />
 
+    <ListPreference
+            android:key="toast_animation"
+            android:title="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
+            android:persistent="false" />
+
      <PreferenceScreen
         android:key="lights_and_warnings"
         android:fragment="com.android.settings.dokdo.LightsAndWarnings"

@@ -54,8 +54,10 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
     private static final String NAVIGATION_BAR_TOGGLE = "navigation_bar_toggle";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private ListPreference mExpandedDesktopPref;
+    private ListPreference mToastAnimation;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
     private CheckBoxPreference mNavigation_bar_toggle;
     private ColorPickerPreference mOverScrollGlowColor;
@@ -144,6 +146,13 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
         mNavigation_bar_width.setValue(setvaluenavwidth);
         mNavigation_bar_width.setOnPreferenceChangeListener(this);
+
+	mToastAnimation = (ListPreference)findPreference(KEY_TOAST_ANIMATION);
+	mToastAnimation.setSummary(mToastAnimation.getEntry());
+	int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.TOAST_ANIMATION, 1);
+	mToastAnimation.setValueIndex(CurrentToastAnimation);
+	mToastAnimation.setOnPreferenceChangeListener(this);
+
 	}
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -175,6 +184,11 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 	    boolean value = mNavigation_bar_toggle.isChecked();
 	    Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_TOGGLE, value ? 0:1);
 	    System.out.println(value ? 1:0);
+	    return true;
+	} else if (preference == mToastAnimation) {
+	    int index = mToastAnimation.findIndexOfValue((String) newValue);
+	    Settings.System.putString(getContentResolver(), Settings.System.TOAST_ANIMATION, (String) newValue);
+	    mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
 	    return true;
 	}
         return false;
