@@ -758,6 +758,10 @@
     <string name="progressbar_linear">선형 애니메이션</string>
     <string name="progressbar_acceleratedecelerate">가감 애니메이션</string>
     <string name="progressbar_decelerate">감속 애니메이션</string>
+    <string name="progressbar_reset_message">프로그레스바 스타일을 기본으로 되돌리겠습니까?</string>
+    <string name="progressbar_button_reset">색상 초기화</string>
+    <string name="progressbar_reset">초기화</string>
+    <string name="progressbar_codejune">코드준색상 프로그레스바 프리셋</string>
 
     <!-- Navbar Settings -->
     <string name="navigation_bar_height">네비게이션 바 높이</string>
