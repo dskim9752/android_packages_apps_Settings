@@ -35,6 +35,11 @@
         android:dependency="status_bar_clock"
         android:summary="@string/clock_use_second_summary"
         android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="bold_clock_text"
+        android:title="@string/clock_use_bold_text"
+        android:dependency="status_bar_clock"
+        android:defaultValue="false" />
     <ListPreference
         android:key="status_bar_am_pm"
         android:dialogTitle="@string/status_bar_am_pm_title"
