@@ -323,6 +323,8 @@
         <item>@string/toast_none_animation</item>
         <item>@string/toast_default_animation</item>
 	<item>@string/toast_fade_animation</item>
+        <item>@string/toast_SlideLeftRight_animation</item>
+	<item>@string/toast_SlideRightLeft_animation</item>
         <item>@string/toast_SlideRight_animation</item>
         <item>@string/toast_SlideLeft_animation</item>
         <item>@string/toast_Xylon_animation</item>
@@ -340,6 +342,8 @@
 	<item>0</item>
         <item>1</item>
         <item>2</item>
+	<item>14</item>
+	<item>15</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
