@@ -359,4 +359,7 @@
     <string name="toast_Translucent_animation">Translucent Animation</string>
     <string name="toast_SlideLeftRight_animation">Slide Left To Right Animation</string>
     <string name="toast_SlideRightLeft_animation">Slide Right To Left Animation</string>
+
+    <!-- StatusBar Bold Clock -->
+    <string name="clock_use_bold_text">Use Bold Text</string>
 </resources>

@@ -851,4 +851,7 @@
 
     <!-- ToastAnimation -->
     <string name="toast_animation_title">토스트 애니메이션</string>
+
+    <!-- StatusBar Bold Clock -->
+    <string name="clock_use_bold_text">굵은 글씨 사용</string>
 </resources>
