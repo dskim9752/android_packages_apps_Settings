@@ -68,6 +68,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_BACKGROUND_STYLE = "lockscreen_background_style";
     private static final String KEY_LOCKSCREEN_MODLOCK_ENABLED = "lockscreen_modlock_enabled";
     private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
+    private static final String KEY_LOCKSCREEN_MUSIC_CONTROLLER ="keyguard_enable_musiccontroller";
 
     private static final String LOCKSCREEN_WALLPAPER_TEMP_NAME = ".lockwallpaper";
 
@@ -76,6 +77,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private CheckBoxPreference mEnableKeyguardWidgets;
     private CheckBoxPreference mEnableCameraWidget;
     private SeekBarPreference mlockscreenblur_radius;
+    private CheckBoxPreference mLockscreenMusicController;
     private CheckBoxPreference mEnableModLock;
     private CheckBoxPreference mEnableMaximizeWidgets;
     private ListPreference mLockBackground;
@@ -166,6 +168,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mlockscreenblur_radius.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKSCREEN_BLUR_RADIUS, 16));
         mlockscreenblur_radius.setOnPreferenceChangeListener(this);
+
+	mLockscreenMusicController = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_MUSIC_CONTROLLER);
+	mLockscreenMusicController.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.LOCKSCREEN_MUSIC_SWITCH, 1) == 1);
     }
 
     @Override
@@ -235,8 +240,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         } else if (KEY_ENABLE_CAMERA.equals(key)) {
             mLockUtils.setCameraEnabled(mEnableCameraWidget.isChecked());
             return true;
-        }
-
+        } else if (KEY_LOCKSCREEN_MUSIC_CONTROLLER.equals(key)) {
+	    boolean value = mLockscreenMusicController.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_MUSIC_SWITCH, value ? 1 : 0);
+            return true;
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

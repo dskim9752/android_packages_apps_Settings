@@ -858,4 +858,8 @@
 
     <!-- StatusBar Bold Clock -->
     <string name="clock_use_bold_text">굵은 글씨 사용</string>
+
+    <!-- Switchable LockScreen Music Controller -->
+    <string name="lockscreen_music_controller_title">미디어 컨트롤러</string>
+    <string name="lockscreen_music_controller_summary">음악이 재생되고 있을때 미디어 컨트롤러와 앨범아트를 보여줍니다.</string>
 </resources>
