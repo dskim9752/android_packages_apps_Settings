@@ -366,4 +366,8 @@
 
     <!-- StatusBar Bold Clock -->
     <string name="clock_use_bold_text">Use Bold Text</string>
+
+    <!-- Switchable LockScreen Music Controller -->
+    <string name="lockscreen_music_controller_title">Media Controller</string>
+    <string name="lockscreen_music_controller_summary">Show media controller and albumart when playing music</string>
 </resources>
