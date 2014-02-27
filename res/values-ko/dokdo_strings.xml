@@ -862,4 +862,11 @@
     <!-- Switchable LockScreen Music Controller -->
     <string name="lockscreen_music_controller_title">미디어 컨트롤러</string>
     <string name="lockscreen_music_controller_summary">음악이 재생되고 있을때 미디어 컨트롤러와 앨범아트를 보여줍니다.</string>
+
+    <!-- LockScreen GlowPad DoubleTap Option -->
+    <string name="lockscreen_glowpad_doubletap_gesture">더블탭 제스처</string>
+    <string name="lockscreen_glowpad_doubletap_checkbox_title">잠금링 더블탭 제스처</string>
+    <string name="lockscreen_glowpad_doubletap_title">잠금링 더블탭 제스처 옵션</string>
+    <string name="lockscreen_glowpad_doubletap_sleep">화면끄기</string>
+    <string name="lockscreen_glowpad_doubletap_torch">손전등</string>
 </resources>

@@ -69,6 +69,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_MODLOCK_ENABLED = "lockscreen_modlock_enabled";
     private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
     private static final String KEY_LOCKSCREEN_MUSIC_CONTROLLER ="keyguard_enable_musiccontroller";
+    private static final String KEY_LOCKSCREEN_GLOWPAD_DOUBLETAP = "glowpad_doubletap_option";
+    private static final String KEY_LOCKSCREEN_GLOWPAD = "glowpad_doubletap";
 
     private static final String LOCKSCREEN_WALLPAPER_TEMP_NAME = ".lockwallpaper";
 
@@ -78,6 +80,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private CheckBoxPreference mEnableCameraWidget;
     private SeekBarPreference mlockscreenblur_radius;
     private CheckBoxPreference mLockscreenMusicController;
+    private ListPreference mGlowpadOption;
+    private CheckBoxPreference mGlowpadDoubletap;
     private CheckBoxPreference mEnableModLock;
     private CheckBoxPreference mEnableMaximizeWidgets;
     private ListPreference mLockBackground;
@@ -171,6 +175,15 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
 	mLockscreenMusicController = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_MUSIC_CONTROLLER);
 	mLockscreenMusicController.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.LOCKSCREEN_MUSIC_SWITCH, 1) == 1);
+
+	mGlowpadDoubletap = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_GLOWPAD);
+	mGlowpadDoubletap.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.DOUBLE_TAP_GLOWPAD_GESTURE, 0) == 1);
+
+	mGlowpadOption = (ListPreference)findPreference(KEY_LOCKSCREEN_GLOWPAD_DOUBLETAP);
+	int CurrentGlowpadOption = Settings.System.getInt(getContentResolver(), Settings.System.LOCKSCREEN_GLOWPAD_DOUBLETAP_OPTION, 0);
+        mGlowpadOption.setSummary(mGlowpadOption.getEntries()[CurrentGlowpadOption]);
+	mGlowpadOption.setValueIndex(CurrentGlowpadOption);
+	mGlowpadOption.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -245,6 +258,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_MUSIC_SWITCH, value ? 1 : 0);
             return true;
+	} else if (KEY_LOCKSCREEN_GLOWPAD.equals(key)) {
+	    boolean value = mGlowpadDoubletap.isChecked();
+	    Settings.System.putInt(getContentResolver(),
+		    Settings.System.DOUBLE_TAP_GLOWPAD_GESTURE, value ? 1 : 0);
+	    return true;
 	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -273,6 +291,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         } else if (preference == mlockscreenblur_radius) {
             int value = ((Integer)objValue).intValue();
 	    Settings.System.putInt(cr, Settings.System.LOCKSCREEN_BLUR_RADIUS, value);
+	    return true;
+	} else if (preference == mGlowpadOption) {
+	    int index = mGlowpadOption.findIndexOfValue((String) objValue);
+	    Settings.System.putString(cr, Settings.System.LOCKSCREEN_GLOWPAD_DOUBLETAP_OPTION, (String) objValue);
+	    mGlowpadOption.setSummary(mGlowpadOption.getEntries()[index]);
 	    return true;
 	}
         return false;
