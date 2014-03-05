@@ -54,6 +54,7 @@
         <item>@string/listview_overshoot_interpolator</item>
         <item>@string/listview_anticipate_overshoot_interpolator</item>
         <item>@string/listview_bounce_interpolator</item>
+        <item>@string/listview_linear_interpolator</item>
     </string-array>
 
     <string-array name="listview_interpolator_values">
@@ -65,6 +66,7 @@
         <item>5</item>
         <item>6</item>
         <item>7</item>
+	<item>8</item>
     </string-array>
 
     <!-- Halo -->

@@ -110,6 +110,7 @@
     <string name="listview_overshoot_interpolator">overshoot_interpolator</string>
     <string name="listview_anticipate_overshoot_interpolator">anticipate_overshoot_interpolator</string>
     <string name="listview_bounce_interpolator">bounce_interpolator</string>
+    <string name="listview_linear_interpolator">linear_interpolator</string>
 
     <!-- Halo -->
     <string name="halo_settings_title">Halo</string>
