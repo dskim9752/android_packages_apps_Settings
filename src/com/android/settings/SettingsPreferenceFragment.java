@@ -312,6 +312,10 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         getActivity().onBackPressed();
     }
 
+    public void setTitle(int resId) {
+        getActivity().setTitle(resId);
+    }
+
     public boolean startFragment(
             Fragment caller, String fragmentClass, int requestCode, Bundle extras) {
         if (getActivity() instanceof PreferenceActivity) {
@@ -325,8 +329,5 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
                     + ")");
             return false;
         }
-
-    public void setTitle(int resId) {
-        getActivity().setTitle(resId);
     }
 }

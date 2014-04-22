@@ -57,9 +57,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String NAVIGATION_BAR_TOGGLE = "navigation_bar_toggle";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
-    private ListPreference mExpandedDesktopPref;
     private ListPreference mToastAnimation;
-    private CheckBoxPreference mExpandedDesktopNoNavbarPref;
     private CheckBoxPreference mNavigation_bar_toggle;
     private ColorPickerPreference mOverScrollGlowColor;
     private SeekBarPreference mNavigation_bar_height;

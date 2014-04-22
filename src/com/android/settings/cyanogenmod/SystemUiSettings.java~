@@ -30,6 +30,7 @@ import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -51,15 +52,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
     private CheckBoxPreference mNavigationBarLeftPref;
     private static final String OVERSCROLL_GLOW_COLOR = "overscroll_glow_color";
-    private static final String OVERSCROLL_PREF = "overscroll_effect";
-    private static final String OVERSCROLL_WEIGHT_PREF = "overscroll_weight";
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+    private static final String NAVIGATION_BAR_TOGGLE = "navigation_bar_toggle";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private ListPreference mExpandedDesktopPref;
-    private ListPreference mOverscrollPref;
-    private ListPreference mOverscrollWeightPref;
+    private ListPreference mToastAnimation;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
+    private CheckBoxPreference mNavigation_bar_toggle;
     private ColorPickerPreference mOverScrollGlowColor;
     private SeekBarPreference mNavigation_bar_height;
     private SeekBarPreference mNavigation_bar_width;
@@ -79,19 +80,9 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         int intColor = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.OVERSCROLL_GLOW_COLOR, defaultColor);
         mOverScrollGlowColor.setNewPreviewColor(intColor);
 
-        mOverscrollPref = (ListPreference) findPreference(OVERSCROLL_PREF);
-        int overscrollEffect = Settings.System.getInt(getContentResolver(),
-                Settings.System.OVERSCROLL_EFFECT, 1);
-        mOverscrollPref.setValue(String.valueOf(overscrollEffect));
-        mOverscrollPref.setOnPreferenceChangeListener(this);
-
-        mOverscrollWeightPref = (ListPreference) findPreference(OVERSCROLL_WEIGHT_PREF);
-        int overscrollWeight = Settings.System.getInt(getContentResolver(), Settings.System.OVERSCROLL_WEIGHT, 5);
-        mOverscrollWeightPref.setValue(String.valueOf(overscrollWeight));
-        mOverscrollWeightPref.setOnPreferenceChangeListener(this);
-
 	mNavigation_bar_height = (SeekBarPreference) findPreference(NAVIGATION_BAR_HEIGHT);
         mNavigation_bar_width = (SeekBarPreference) findPreference(NAVIGATION_BAR_WIDTH);
+	mNavigation_bar_toggle = (CheckBoxPreference) findPreference(NAVIGATION_BAR_TOGGLE);
 
 	// Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
@@ -108,7 +99,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 Settings.System.EXPANDED_DESKTOP_STYLE, 0);
 
         try {
-<<<<<<< HEAD
             // Only show the navigation bar category on devices that has a navigation bar
             // unless we are forcing it via development settings
             boolean forceNavbar = android.provider.Settings.System.getInt(getContentResolver(),
@@ -117,10 +107,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                     || forceNavbar;
 
             if (hasNavBar) {
-=======
-            boolean hasNavBar = WindowManagerGlobal.getWindowManagerService().hasNavigationBar();
-	    if (hasNavBar) {
->>>>>>> NavBar Size Control [1/2]
                 mExpandedDesktopPref.setOnPreferenceChangeListener(this);
                 mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
                 updateExpandedDesktop(expandedDesktopValue);
@@ -138,8 +124,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 expandedCategory.removePreference(mExpandedDesktopPref);
                 // Hide navigation bar category
                 prefScreen.removePreference(findPreference(CATEGORY_NAVBAR));
-                prefScreen.removePreference(mNavigation_bar_height);
-                prefScreen.removePreference(mNavigation_bar_width);
 
             }
         } catch (RemoteException e) {
@@ -147,12 +131,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         }
 
 	//NavBar control
-        float height = mContext.getResources().getDimension(com.android.internal.R.dimen.navigation_bar_height);
-        float width = mContext.getResources().getDimension(com.android.internal.R.dimen.navigation_bar_width);
-        DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
-        int heightdp = (int) (height / (metrics.densityDpi / 160f));
-        int widthdp = (int) ( width / (metrics.densityDpi / 160f));
-	int setvaluenavheight = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT, 48);
+	int DefaultNavbarStatus = (mContext.getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar) ? 1:0);
+	int NavbarStatus = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_TOGGLE, DefaultNavbarStatus);
+	if ( NavbarStatus == 1 ) {
+		mNavigation_bar_toggle.setChecked(true);
+	} else {
+		mNavigation_bar_toggle.setChecked(false);
+	}
+	mNavigation_bar_toggle.setOnPreferenceChangeListener(this);
+        int setvaluenavheight = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT, 48);
         int setvaluenavwidth = Settings.System.getInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH, 42);
 
         mNavigation_bar_height.setValue(setvaluenavheight);
@@ -161,7 +148,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         mNavigation_bar_width.setValue(setvaluenavwidth);
         mNavigation_bar_width.setOnPreferenceChangeListener(this);
 
+	mToastAnimation = (ListPreference)findPreference(KEY_TOAST_ANIMATION);
+	mToastAnimation.setSummary(mToastAnimation.getEntry());
+	int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.TOAST_ANIMATION, 1);
+	mToastAnimation.setValueIndex(CurrentToastAnimation);
+        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
+	mToastAnimation.setOnPreferenceChangeListener(this);
+
 	}
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mExpandedDesktopPref) {
             int expandedDesktopValue = Integer.valueOf((String) newValue);
@@ -179,15 +174,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.OVERSCROLL_GLOW_COLOR, intHex);
             return true;
-        } else if (preference == mOverscrollPref) {
-            int overscrollEffect = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.OVERSCROLL_EFFECT, overscrollEffect);
-            return true;
-        } else if (preference == mOverscrollWeightPref) {
-            int overscrollWeight = Integer.valueOf((String)newValue);
-            Settings.System.putInt(getContentResolver(), Settings.System.OVERSCROLL_WEIGHT, overscrollWeight);
-            return true;
         } else if (preference == mNavigation_bar_height) {
 	    int NavHeight = ((Integer)newValue).intValue();
 	    Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT, NavHeight);
@@ -196,7 +182,18 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             int NavWidth = ((Integer)newValue).intValue();
             Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH, NavWidth);
 	    return true;
-        }
+        } else if (preference == mNavigation_bar_toggle) {
+	    boolean value = mNavigation_bar_toggle.isChecked();
+	    Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_TOGGLE, value ? 0:1);
+	    System.out.println(value ? 1:0);
+	    return true;
+	} else if (preference == mToastAnimation) {
+	    int index = mToastAnimation.findIndexOfValue((String) newValue);
+	    Settings.System.putString(getContentResolver(), Settings.System.TOAST_ANIMATION, (String) newValue);
+	    mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+	    Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
+	    return true;
+	}
         return false;
     }
 
