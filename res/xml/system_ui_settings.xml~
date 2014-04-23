@@ -22,60 +22,124 @@
     <PreferenceCategory
         android:key="status_bar_category"
         android:title="@string/status_bar_title" >
+
     <PreferenceScreen
         android:key="status_bar"
         android:fragment="com.android.settings.cyanogenmod.StatusBar"
         android:title="@string/status_bar_title" />
+
     <PreferenceScreen
         android:key="quick_settings_panel"
         android:fragment="com.android.settings.quicksettings.QuickSettings"
         android:title="@string/quick_settings_panel_title" />
+
     <PreferenceScreen
         android:key="notification_drawer"
         android:fragment="com.android.settings.cyanogenmod.NotificationDrawer"
         android:title="@string/notification_drawer_title" />
+
+    <PreferenceScreen
+        android:key="halo_settings"
+        android:fragment="com.android.settings.paranoid.Halo"
+        android:title="@string/halo_settings_title" />
+
+    <PreferenceScreen
+        android:key="color_settings"
+        android:fragment="com.android.settings.cyanogenmod.ColorSettings"
+        android:title="@string/status_bar_color_setting" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+	android:key="navigation_bar_control"
+	android:title="@string/navigation_bar_control" >
+
+    <CheckBoxPreference
+	android:key="navigation_bar_toggle"
+        android:title="@string/navigation_bar_toggle" 
+	android:summary="@string/navigation_bar_toggle_summary" />
+
+    <com.android.settings.cyanogenmod.SeekBarPreference
+        android:key="navigation_bar_height"
+        android:title="@string/navigation_bar_height" 
+        android:persistent="false"
+        android:summary="@string/navigation_bar_height_summary"
+        android:max="48"
+        settings:min="0"
+        settings:unitsLeft=""
+        settings:unitsRight="dp"
+        android:dependency="navigation_bar_toggle"
+        android:defaultValue="48" />
+
+    <com.android.settings.cyanogenmod.SeekBarPreference
+        android:key="navigation_bar_width"
+        android:title="@string/navigation_bar_width" 
+        android:persistent="false"
+        android:summary="@string/navigation_bar_width_summary"
+        android:max="42"
+        settings:min="0"
+        settings:unitsLeft=""
+        settings:unitsRight="dp"
+        android:dependency="navigation_bar_toggle"
+        android:defaultValue="42" />
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="navigation_bar"
         android:title="@string/navigation_bar_category" >
-        <PreferenceScreen
-            android:key="navigation_bar"
-            android:fragment="com.android.settings.cyanogenmod.NavBar"
-            android:title="@string/navigation_bar_title" />
-        <PreferenceScreen
-            android:key="navigation_ring"
-            android:fragment="com.android.settings.cyanogenmod.NavRing"
-            android:title="@string/navigation_ring_title" />
-    </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="expanded_desktop_category"
-        android:title="@string/power_menu_expanded_desktop" >
-    <ListPreference
-            android:key="expanded_desktop"
-            android:title="@string/power_menu_expanded_desktop"
-            android:entries="@array/expanded_desktop_entries"
-            android:entryValues="@array/expanded_desktop_values"
-            android:persistent="false" />
-    <CheckBoxPreference
-            android:key="expanded_desktop_no_navbar"
-            android:title="@string/power_menu_expanded_desktop"
-            android:persistent="true" />
+    <PreferenceScreen
+        android:key="navigation_bar"
+        android:fragment="com.android.settings.cyanogenmod.NavBar"
+        android:title="@string/navigation_bar_title" />
+
+    <PreferenceScreen
+        android:key="navigation_ring"
+        android:fragment="com.android.settings.cyanogenmod.NavRing"
+        android:title="@string/navigation_ring_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lock_screen_category"
-        android:title="@string/power_menu_expanded_desktop" >
+        android:title="@string/lock_screen_title" >
+
     <PreferenceScreen
         android:key="lock_screen_settings"
         android:fragment="com.android.settings.cyanogenmod.LockscreenInterface"
         android:title="@string/lock_screen_title" />
+
+    <PreferenceScreen
+        android:title="@string/lockscreen_notifications"
+        android:fragment="com.android.settings.cyanogenmod.LockscreenNotifications" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/ui_overscroll_title">
+
+    <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+        android:key="overscroll_glow_color"
+        android:title="@string/overscroll_glow_title"
+        android:defaultValue="#ffffff" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+	android:key="progressbar"
+	android:title="@string/progressbar_title" >
+
+    <PreferenceScreen
+        android:key="progressbar_settings"
+        android:fragment="com.android.settings.cyanogenmod.ProgressBar"
+        android:title="@string/progressbar_title" >
+    </PreferenceScreen>
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="etc_category"
-        android:title="@string/power_menu_expanded_desktop" >
+        android:title="@string/etc_category_title" >
+
     <PreferenceScreen
         android:key="themes_settings"
         android:title="@string/themes_settings_title">
@@ -84,40 +148,46 @@
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </PreferenceScreen>
-<<<<<<< HEAD
 
-    <PreferenceCategory
-            android:key="expanded_desktop_category"
-            android:title="@string/power_menu_expanded_desktop" >
+    <PreferenceScreen
+        android:key="DPI"
+        android:title="@string/dpi_category" >
+        <intent android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.dokdo.DPI_Settings" />
+    </PreferenceScreen>
 
-        <ListPreference
-                android:key="expanded_desktop"
-                android:title="@string/expanded_desktop_style"
-                android:entries="@array/expanded_desktop_entries"
-                android:entryValues="@array/expanded_desktop_values"
-                android:persistent="false" />
-
-        <CheckBoxPreference
-                android:key="expanded_desktop_no_navbar"
-                android:title="@string/power_menu_expanded_desktop"
-                android:persistent="true" />
-
-        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
-                android:key="expanded_desktop_system_bars_visibility"
-                android:title="@string/expanded_desktop_system_bars_visibility"
-                android:summary="@string/expanded_desktop_system_bars_visibility_summary"
-                android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <!-- Device Specific Touchscreen gestures. Avoid duplicating CMHW functionality, please -->
-=======
     <PreferenceScreen
         android:key="listview"
         android:fragment="com.android.settings.dokdo.ListviewAnimation"
         android:title="@string/listview_category" />
+
+    <ListPreference
+            android:key="toast_animation"
+            android:title="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
+            android:persistent="false" />
+
+     <PreferenceScreen
+        android:key="lights_and_warnings"
+        android:fragment="com.android.settings.dokdo.LightsAndWarnings"
+        android:title="@string/lights_and_warnings_title" />
+
+    </PreferenceCategory>
+
+    <ListPreference
+            android:key="expanded_desktop"
+            android:title="@string/power_menu_expanded_desktop"
+            android:entries="@array/expanded_desktop_entries"
+            android:entryValues="@array/expanded_desktop_values"
+            android:persistent="false" />
+
+    <CheckBoxPreference
+            android:key="expanded_desktop_no_navbar"
+            android:title="@string/power_menu_expanded_desktop"
+            android:persistent="true" />
+
     <!-- Device Specific Touchscreen gestures -->
->>>>>>> Listanimation views and interpolator (2/2)
     <Preference
         android:key="touch_screen_gesture_settings">
         <intent
@@ -125,29 +195,4 @@
             android:targetPackage="com.cyanogenmod.settings.device"
             android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
     </Preference>
-
-<<<<<<< HEAD
-    <PreferenceCategory
-        android:key="navigation_bar"
-        android:title="@string/navigation_bar_category" >
-
-        <PreferenceScreen
-            android:key="navigation_bar"
-            android:fragment="com.android.settings.cyanogenmod.NavBar"
-            android:title="@string/navigation_bar_title" />
-
-        <PreferenceScreen
-            android:key="navigation_ring"
-            android:fragment="com.android.settings.cyanogenmod.NavRing"
-            android:title="@string/navigation_ring_title" />
-
-        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
-            android:key="navigation_bar_left"
-            android:title="@string/navigation_bar_left_title"
-            android:summary="@string/navigation_bar_left_summary"
-            android:defaultValue="false" />
-
-=======
->>>>>>> Listanimation views and interpolator (2/2)
-    </PreferenceCategory>
 </PreferenceScreen>

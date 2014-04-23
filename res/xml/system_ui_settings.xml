@@ -141,15 +141,6 @@
         android:title="@string/etc_category_title" >
 
     <PreferenceScreen
-        android:key="themes_settings"
-        android:title="@string/themes_settings_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </PreferenceScreen>
-
-    <PreferenceScreen
         android:key="DPI"
         android:title="@string/dpi_category" >
         <intent android:targetPackage="com.android.settings"
